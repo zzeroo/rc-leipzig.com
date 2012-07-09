@@ -1,7 +1,12 @@
 RcLeipzigCom::Application.routes.draw do
-  resources :subscribers
+  
+  
 
-  resources :events
+  resources :events do
+    resources :subscribers do
+      resource :grades 
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

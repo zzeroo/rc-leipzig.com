@@ -1,5 +1,5 @@
 class Subscriber < ActiveRecord::Base
-  attr_accessible :association, :email, :event_id, :firstname, :grade_id, :name
+  attr_accessible :association, :email, :events_id, :firstname, :grades_id, :name
 
   belongs_to :event
   belongs_to :grade

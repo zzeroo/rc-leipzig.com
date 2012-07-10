@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Startdate:</b>
-  <%= @event.startdate %>
-</p>
+<h1><%= @event.title %></h1>
+<h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
 
 <p>
-  <b>Enddate:</b>
-  <%= @event.enddate %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
-
-<p>
-  <b>Description:</b>
+  <b>Beschreibung:</b>
   <%= @event.description %>
 </p>
 
+<% if @event.subscribers -%>
+  <ol>
+  <% @event.subscribers.each do |subscriber| -%>
+    <li><%= subscriber.firstname %> <%= subscriber.lastname %> (<%= subscriber.grade %>)
+    <%= link_to "Bearbeiten", edit_event_subscriber_path(@event, @event.subscribers) %>
+    </li>
+  <% end -%>
+  </ol>
+<% end -%>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %><br />
+
+<%= link_to 'Bearbeiten', edit_event_path(@event) %> |
+<%= link_to 'Zurück', events_path %>

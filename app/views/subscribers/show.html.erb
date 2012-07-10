@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Firstname:</b>
+  <b>Vorname:</b>
   <%= @subscriber.firstname %>
 </p>
 
 <p>
-  <b>Lastname:</b>
+  <b>Nachname:</b>
   <%= @subscriber.lastname %>
 </p>
 
@@ -16,15 +16,12 @@
 </p>
 
 <p>
-  <b>Event:</b>
-  <%= @subscriber.event_id %>
-</p>
 
 <p>
-  <b>Grade:</b>
+  <b>Klasse:</b>
   <%= @subscriber.grade %>
 </p>
 
 
-<%= link_to 'Edit', edit_subscriber_path(@subscriber) %> |
-<%= link_to 'Back', subscribers_path %>
+<%= link_to 'Bearbeiten', edit_subscriber_path(@subscriber) %> |
+<%= link_to 'Zurück', subscribers_path %>

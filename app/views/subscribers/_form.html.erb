@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br />
+    <%= f.label "Vorname" %><br />
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br />
+    <%= f.label "Nachname" %><br />
     <%= f.text_field :lastname %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Email" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :grade %><br />
-    <%= f.text_field :grade %>
+    <%= f.label "Klasse" %><br />
+    <%= f.select :grade, ["Rookie Challenge", "Shortcourse Challenge", "2WD Challenge", "4WD Challenge"], { :include_blank => false } %>
   </div>
   <div class="actions">
     <%= f.submit %>

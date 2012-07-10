@@ -9,6 +9,6 @@ class Subscriber < ActiveRecord::Base
   validates :firstname, :presence => true
   validates :lastname, :presence => true
 
-  validates :grade, :inclusion => { :in => ["Rookie Challenge", "Shortcourse Challenge", "2WD Challenge", "4WD Challenge"], :message => "%{value} gehört nicht zu einer erlaubten Klasse" }
+  validates :grade, :inclusion => { :in => ["Rookie Challenge", "Shortcourse Challenge", "2WD Challenge", "4WD Challenge"], :message => "%{value} ist keine erlaubte Klasse" }
 
 end

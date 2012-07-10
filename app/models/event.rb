@@ -5,7 +5,5 @@ class Event < ActiveRecord::Base
 
   validates_associated :subscribers
   
-  validates :description, :presence => true
-
   validates :title, :presence => true
 end

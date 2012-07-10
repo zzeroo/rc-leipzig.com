@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @subscriber %> |
-<%= link_to 'Back', subscribers_path %>
+<%= link_to 'Show', @event.subscribers(@event) %> |
+<%= link_to 'Back', event_subscribers_path(@event) %>

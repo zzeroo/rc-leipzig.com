@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
+  <meta charset="utf-8">
+
   <title>RcLeipzigCom</title>
+
+  <!-- mobile viewport optimisation -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag '/stylesheets/yaml/central.css', :media => 'screen' %>
+  <!--[if lte IE 7]>
+  <link rel="stylesheet" href="stylesheets/yaml/core/iehacks.min.css" type="text/css"/>
+  <![endif]-->
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
-  <div class="main_menu">
-    <ul>
-      <li><%= link_to "Home", :root %></li>
-      <li><%= link_to "Termine", :events %></li>
-    </ul>
+  <div class="ym-column">
+    <div class="ym-col1">
+      <div class="ym-cbox">
+        <ul>
+          <li><%= link_to "Home", :root %></li>
+          <li><%= link_to "Termine", :events %></li>
+        </ul>
+      </div>
+    </div>
+  <div class="ym-col3">
+    <div class="ym-cbox">
+    <%= yield %>
+    </div>
   </div>
-<%= yield %>
 
 </body>
 </html>

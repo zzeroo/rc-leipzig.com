@@ -1,0 +1,6 @@
+.ym-col1 { width: 25%; } /* left column */
+.ym-col2 { width: 25%; } /* right column */
+.ym-col3 { margin-left: 25%; margin-right: 25%; } /* center column */
+
+.ym-col1 { float: right; width: 75%; } /* content */
+.ym-col3 { width: auto; margin: 0 75% 0 0; } /* sidebar */

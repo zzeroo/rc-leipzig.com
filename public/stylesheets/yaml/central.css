@@ -6,6 +6,7 @@
 @import url("./core/base.css");
 /* import screen layout */
 @import url("./navigation/hlist.css");
+@import url("./navigation/vlist.css");
 @import url("./forms/gray-theme.css");
 @import url("screen.css");
 @import url("typography.css");

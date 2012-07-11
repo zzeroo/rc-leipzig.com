@@ -9,16 +9,18 @@
 </p>
 
 <% if @event.subscribers -%>
+  <p><b>Nennliste:</b></p>
   <ol>
   <% @event.subscribers.each do |subscriber| -%>
     <li><%= subscriber.firstname %> <%= subscriber.lastname %> (<%= subscriber.grade %>)
-    <%= link_to "Bearbeiten", edit_event_subscriber_path(@event, @event.subscribers) %>
+    <%= link_to "Bearbeiten", edit_event_subscriber_path(@event, subscriber) %>
     </li>
   <% end -%>
   </ol>
 <% end -%>
 
-<%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %><br />
+<%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %> |
+<%= link_to 'Nennliste bearbeiten', event_subscribers_path(@event) %><br />
 
 <%= link_to 'Bearbeiten', edit_event_path(@event) %> |
 <%= link_to 'Zurück', events_path %>

@@ -20,7 +20,7 @@
 <% end -%>
 
 <%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %> |
-<%= link_to 'Nennliste bearbeiten', event_subscribers_path(@event) %><br />
+<%= link_to 'Nennliste bearbeiten', event_subscribers_path(@event, @subscribers) %><br />
 
 <%= link_to 'Bearbeiten', edit_event_path(@event) %> |
 <%= link_to 'Zurück', events_path %>

@@ -1,7 +1,7 @@
 <h1>Nennliste</h1>
 <h2><%= @event.title %></h2>
 
-<table class="subscribers">
+<table id="subscribers">
   <thead>
     <tr>
       <th>Vorname</th>
@@ -23,8 +23,8 @@
       <td><%= subscriber.email %></td>
       <td><%= subscriber.event_id %></td>
       <td><%= subscriber.grade %></td>
-      <td><%= link_to 'Show', event_subscriber_path(@event) %></td>
-      <td><%= link_to 'Edit', edit_event_subscribers_path(@event, subscriber) %></td>
+      <td><%= link_to 'Show', event_subscriber_path(@event, subscriber) %></td>
+      <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber) %></td>
       <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
@@ -33,4 +33,4 @@
 
 <br />
 
-<%= link_to 'In Nennliste eintragen', new_subscriber_path %>
+<%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %>

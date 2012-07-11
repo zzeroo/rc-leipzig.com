@@ -76,7 +76,9 @@ class SubscribersController < ApplicationController
     @subscriber.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      # format.html { redirect_to events_url }
+      # redirect to location stored at #index action
+      format.html { redirect_to event_subscribers_path(@event) }
     end
   end
 end

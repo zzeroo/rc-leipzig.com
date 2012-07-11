@@ -25,17 +25,25 @@
   <div class="ym-column">
     <div class="ym-col1">
       <div class="ym-cbox">
-        <ul>
-          <li><%= link_to "Home", :root %></li>
-          <li><%= link_to "Termine", :events %></li>
-        </ul>
+      <ul>
+        <li><%= link_to "Home", :root %></li>
+        <li><%= link_to "Termine", :events %></li>
+      </ul>
       </div>
     </div>
-  <div class="ym-col3">
-    <div class="ym-cbox">
-    <%= yield %>
+    <div class="ym-col2">
+      <div class="ym-cbox">
+      </div>
+    </div>
+    <div class="ym-col3">
+      <div class="ym-cbox ym-clearfix">
+      <%= yield %>
+
+      </div>
+      <div class="ym-ie-clearing">&nbsp;</div>
     </div>
   </div>
+
 
 </body>
 </html>

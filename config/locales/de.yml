@@ -1,0 +1,5 @@
+de:
+  helpers:
+    submit:
+      create: "Speichern"
+      update: "Update"

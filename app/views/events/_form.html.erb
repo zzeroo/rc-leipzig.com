@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :startdate %><br />
-    <%= f.date_select :startdate %>
-  </div>
-  <div class="field">
-    <%= f.label :enddate %><br />
-    <%= f.date_select :enddate %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label "Titel" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label "Von" %><br />
+    <%= f.date_select :startdate %>
+  </div>
+  <div class="field">
+    <%= f.label "Bis" %><br />
+    <%= f.date_select :enddate %>
+  </div>
+  <div class="field">
+    <%= f.label "Beschreibung" %><br />
     <%= f.text_area :description %>
   </div>
   <div class="actions">

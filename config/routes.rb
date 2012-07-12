@@ -4,5 +4,6 @@ RcLeipzigCom::Application.routes.draw do
   end
 
   root :to => 'home#index'
-
+  
+  match ':controller(/:action(/:id))'
 end

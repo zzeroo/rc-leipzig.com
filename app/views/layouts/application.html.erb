@@ -25,10 +25,20 @@
   <div class="ym-column">
     <div class="ym-col1">
       <div class="ym-cbox">
-      <ul class="ym-vlist">
-        <li><%= link_to "Home", :root %></li>
-        <li><%= link_to "Termine", :events %></li>
-      </ul>
+        <nav class="ym-vlist">
+        <h6 class="ym-vtitle"><%= link_to (image_tag "logo_100.gif"), :root %></h6>
+        <ul>
+          <li><%= link_to "Home", :root %></li>
+          <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
+          <li><%= link_to "Termine", :events %></li>
+          <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
+          <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
+          <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
+          <li><%= link_to "Über Uns", url_for(:controller => :home, :action => :about) %></li>
+          <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
+          <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
+        </ul>
+        </nav>
       </div>
     </div>
     <div class="ym-col2">

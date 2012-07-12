@@ -3,7 +3,7 @@ class Subscriber < ActiveRecord::Base
 
   belongs_to :event
 
-  validates :lastname, :email, :presence => true
+  validates :firstname, :lastname, :email, :presence => true
 
 
 end

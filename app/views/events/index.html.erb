@@ -1,10 +1,13 @@
-<h1>Termine</h1>
+<p><img src="/assets/banner.jpg"></p> 
 
+<strong><p class="Stil1"><font face="Arial, Helvetica, sans-serif">Termine</font></p></strong>
+              <p><strong><font size="4" face="Arial, Helvetica, sans-serif">An Rennwochenenden ist Samstags die Strecke f&uuml;r freies Training ge&ouml;ffnet. </font></strong></p>
+              
 <table>
   <tr>
-    <th>Titel</th>
-    <th>Von</th>
-    <th>Bis</th>
+    <th>von:</th>
+    <th>bis:</th>
+    <th>Event</th>
     <th>Beschreibung</th>
     <th><b>Nennliste</b></th>
     <th></th>
@@ -14,14 +17,14 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= link_to event.title, event %></td>
     <td><%= event.startdate %></td>
     <td><%= event.enddate %></td>
+    <td><%= link_to event.title, event %></td>
     <td><%= event.description %></td>
     <td><center><%= link_to event.subscribers.size, event_subscribers_path(event) %></center></td>
     <td><%= link_to 'Bearbeiten', edit_event_path(event) %></td>
     <td><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <td><%= link_to 'in Startliste eintragen', new_event_subscriber_path(event) %></td>
+    <td><b><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event) %></b></td>
   </tr>
 <% end %>
 </table>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>RcLeipzigCom</title>
+  <title>Racing Center Leipzig</title>
 
   <!-- mobile viewport optimisation -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
         <ul>
           <li><%= link_to "Home", :root %></li>
           <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
-          <li><%= link_to "Termine", :events %></li>
+          <li style="background-color: #E88282;"><%= link_to "Termine", :events %></li>
           <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
           <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
           <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>

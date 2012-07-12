@@ -1,6 +1,6 @@
 <%= form_for([@event, @subscriber]) do |f| %>
   <% if @subscriber.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="box error">
       <h2><%= pluralize(@subscriber.errors.count, "error") %> prohibited this subscriber from being saved:</h2>
 
       <ul>

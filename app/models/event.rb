@@ -3,5 +3,5 @@ class Event < ActiveRecord::Base
 
   has_many :subscribers, :dependent => :destroy
 
-  validate :title, :presence => true 
+  validates :title, :presence => true
 end

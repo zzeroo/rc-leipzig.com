@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require dataTables/jquery.dataTables
- *= require_tree .
+ *= require css/flexible-grids.css
+ * require_tree .
  */

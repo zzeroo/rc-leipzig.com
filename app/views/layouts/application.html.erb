@@ -12,7 +12,6 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag '/stylesheets/yaml/central.css', :media => 'screen' %>
   <!--[if lte IE 7]>
   <link rel="stylesheet" href="stylesheets/yaml/core/iehacks.min.css" type="text/css"/>
   <![endif]-->
@@ -22,15 +21,21 @@
   <![endif]-->
 </head>
 <body>
-  <div class="ym-column">
-    <div class="ym-col1">
-      <div class="ym-cbox">
-        <nav class="ym-vlist">
-        <h6 class="ym-vtitle"><%= link_to (image_tag "logo_100.gif"), :root %></h6>
+<header>
+  <div class="ym-wrapper">
+    <div class="ym-wbox">
+      <h1><%= link_to (image_tag "logo_100.gif"), :root %> Racing Center Leipzig</h1>
+    </div>
+  </div>
+</header>
+
+<nav id="nav">
+  <div class="ym-wrapper">
+    <div class="ym-hlist">
         <ul>
           <li><%= link_to "Home", :root %></li>
           <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
-          <li style="background-color: #E88282;"><%= link_to "Termine", :events %></li>
+          <li><%= link_to "Termine", :events %></li>
           <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
           <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
           <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
@@ -38,18 +43,27 @@
           <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
           <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
         </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="ym-col3">
-      <div class="ym-cbox ym-clearfix">
-      <%= yield %>
-
-      </div>
-      <div class="ym-ie-clearing">&nbsp;</div>
+      <form class="ym-searchform">
+        <input class="ym-searchfield" type="search" placeholder="Search..." />
+        <input class="ym-searchbutton" type="submit" value="Search" />
+      </form>
     </div>
   </div>
+</nav>
+
+<div id="main">
+  <div class="ym-wrapper">
+    <%= yield %>
+  </div>
+</div>
 
 
-</body>
+<footer>
+  <div class="ym-wrapper">
+    <div class="ym-wbox">
+      <p>© Racing Center Leipzig 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
+    </div>
+  </div>
+</footer>
+
 </html>

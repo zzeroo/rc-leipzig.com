@@ -10,13 +10,37 @@
 
 <% if @event.subscribers -%>
   <p><b><%= link_to 'Nennliste:', event_subscribers_path(@event, @subscribers) %></b></p>
-  <ol>
-  <% @event.subscribers.each do |subscriber| -%>
-    <li><%= subscriber.firstname %> <%= subscriber.lastname %> (<%= subscriber.grade %>)
-    <%= link_to "Bearbeiten", edit_event_subscriber_path(@event, subscriber) %>
-    </li>
-  <% end -%>
-  </ol>
+  
+  <table id="subscribers">
+    <thead>
+      <tr>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Email</th>
+        <th>Termin</th>
+        <th>Klasse</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <% @event.subscribers.each do |subscriber| %>
+    </tbody>
+      <tr>
+        <td><%= subscriber.firstname %></td>
+        <td><%= subscriber.lastname %></td>
+        <td><%= subscriber.email %></td>
+        <td><%= subscriber.event_id %></td>
+        <td><%= subscriber.grade %></td>
+        <td><%= link_to 'Show', event_subscriber_path(@event, subscriber) %></td>
+        <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber) %></td>
+        <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
 <% end -%>
 
 <p>

@@ -13,17 +13,18 @@
  *= require_tree .
  */
 /* Google Font API */
+
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700);
              
 /* import core styles | Basis-Stylesheets einbinden */
-@import url(yaml/core/base.css);                                                                                                                               
+@import url(/stylesheets/yaml/core/base.css);
              
 /* import screen layout | Screen-Layout einbinden */
-@import url(yaml/navigation/hlist.css);
-@import url(yaml/forms/gray-theme.css);
+@import url(/stylesheets/yaml/navigation/hlist.css);
+@import url(/stylesheets/yaml/forms/gray-theme.css);
              
-@import url(yaml/screen/typography.css);
-@import url(yaml/screen/screen-FULLPAGE-layout.css);
+@import url(/stylesheets/yaml/screen/typography.css);
+@import url(/stylesheets/yaml/screen/screen-FULLPAGE-layout.css);
              
 /* import print layout | Druck-Layout einbinden */
-@import url(yaml/print/print.css);
+@import url(/stylesheets/yaml/print/print.css);

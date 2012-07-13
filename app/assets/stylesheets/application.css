@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require dataTables/jquery.dataTables
- * require_tree .
+ *= require_tree .
  */
 /* Google Font API */
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700);

@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= form_for(@event, :class => "ym-form linearize-form ym-columnar") do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation" class="box error">
       <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="ym-fbox-text">
     <%= f.label "Titel" %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="ym-fbox-text">
     <%= f.label "Von" %><br />
     <%= f.date_select :startdate %>
   </div>
-  <div class="field">
+  <div class="ym-fbox-text">
     <%= f.label "Bis" %><br />
     <%= f.date_select :enddate %>
   </div>
-  <div class="field">
+  <div class="ym-fbox-select">
     <%= f.label "Beschreibung" %><br />
     <%= f.text_area :description %>
   </div>
-  <div class="actions">
+  <div class="ym-fbox-button">
     <%= f.submit "Termin erstellen" %>
   </div>
 <% end %>

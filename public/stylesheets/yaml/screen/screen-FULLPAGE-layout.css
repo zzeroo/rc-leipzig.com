@@ -17,6 +17,7 @@
 
 	/* force vertical scrollbar */
 	body {
+		background: #EEEEEE;
 		overflow-y: scroll;
 	}
 
@@ -58,7 +59,7 @@
 	}
 
 	footer {
-		background: #eee;
+		background: #DDD;
 		color: #444;
 	}
 

@@ -1,5 +1,15 @@
+<section class="box info"><div class="ym-grid linearize-level-1">
+  <%= image_tag "race-flags-small.png" %>
+</div></section>
+<section>
+
+<article class="content">
+
 <h1>In Nennliste eintragen</h1>
 
 <%= render 'form' %>
 
-<p><%= link_to 'Zurück', event_subscribers_path(@event, @subscriber) %></p>
+<p><%= link_to 'Zurück', event_subscribers_path(@event, @subscriber), :class => "ym-button" %></p>
+
+</article>
+</section>

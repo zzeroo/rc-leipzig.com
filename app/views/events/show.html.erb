@@ -15,12 +15,12 @@ Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= l
   <%= @event.description %>
 </p>
 
-<p><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers) %></b></p>
+<p><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers), :class => "ym-button ym-play" %></b></p>
  
 
 <p>
-<%= link_to 'Bearbeiten', edit_event_path(@event) %> |
-<%= link_to 'Zurück zur Übersicht', events_path %>
+<%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %>
+<%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
 </p>
 
 </article>

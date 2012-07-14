@@ -28,9 +28,9 @@ Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= l
     <td><%= subscriber.lastname %></td>
     <td><%= subscriber.email %></td>
     <td><%= subscriber.grade %></td>
-    <td><%= link_to 'Show', event_subscriber_path(@event, subscriber) %></td>
-    <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber) %></td>
-    <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', event_subscriber_path(@event, subscriber), :class => "ym-button ym-play" %></td>
+    <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber), :class => "ym-button ym-edit" %></td>
+    <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td>
   </tr>
 <% end %>
   </tbody>
@@ -43,8 +43,8 @@ Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= l
 </div>
 <div class="ym-clearfix"></div>
 
-<p><%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %> |
-<%= link_to 'Zurück zu den Rennen', events_path %></p>
+<p><%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event), :class => "ym-button ym-add" %>
+<%= link_to 'Zurück zu den Rennen', events_path, :class => "ym-button" %></p>
 
 </article>
 </section>

@@ -4,9 +4,11 @@ class SubscribersController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
     @subscribers = @event.subscribers.order(:lastname).page(params[:page]).per(5)
+    @allsubscribers = @event.subscribers
 
     respond_to do |format|
       format.html # index.html.erb
+      format.csv { render :layout => false }
     end
   end
 

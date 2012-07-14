@@ -1,15 +1,20 @@
-<section class="box info"><div class="ym-grid linearize-level-1">
-<%= image_tag "race-flags-small.png" %>
-</div></section>
-<section>
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="box info"><div class="ym-grid linearize-level-1">
+      <%= image_tag "race-flags-small.png" %>
+    </div></section>
+    <section>
 
-<article class="content">
+    <article class="content">
 
-<h1>Nennlisteneintrag bearbeiten</h1>
+    <h1>Nennlisteneintrag bearbeiten</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<p><%= link_to 'Zurück', event_subscribers_path(@event), :class => "ym-button" %></p>
+    <p><%= link_to 'Zurück', event_subscribers_path(@event), :class => "ym-button" %></p>
 
-</article>
-</section>
+    </article>
+    </section>
+  </div>
+</div>
+

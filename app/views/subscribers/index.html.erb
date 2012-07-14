@@ -1,38 +1,40 @@
-<section class="box info"><div class="ym-grid linearize-level-1">
-<%= image_tag "race-flags-small.png" %>
-Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %>
-</div></section>
-<section>
-<article class="content">
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="box info"><div class="ym-grid linearize-level-1">
+      <%= image_tag "race-flags-small.png" %>
+      Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %>
+    </div></section>
+    <section>
+    <article class="content">
 
-<h1>Nennliste</h1>
-<h2><%= @event.title %></h2>
+    <h1>Nennliste</h1>
+    <h2><%= @event.title %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vorname</th>
-      <th>Nachname</th>
-      <th>Email</th>
-      <th>Klasse</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Email</th>
+          <th>Klasse</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-  <% @subscribers.each do |subscriber| %>
-  </tbody>
-  <tr>
-    <td><%= subscriber.firstname %></td>
-    <td><%= subscriber.lastname %></td>
-    <td><%= subscriber.email %></td>
-    <td><%= subscriber.grade %></td>
-    <td><%= link_to 'Show', event_subscriber_path(@event, subscriber), :class => "ym-button ym-play" %></td>
-    <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber), :class => "ym-button ym-edit" %></td>
-    <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td>
-  </tr>
-<% end %>
+      <% @subscribers.each do |subscriber| %>
+      </tbody>
+      <tr>
+        <td><%= subscriber.firstname %></td>
+        <td><%= subscriber.lastname %></td>
+        <td><%= subscriber.email %></td>
+        <td><%= subscriber.grade %></td>
+        <td><%= link_to 'Show', event_subscriber_path(@event, subscriber), :class => "ym-button ym-play" %></td>
+        <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber), :class => "ym-button ym-edit" %></td>
+        <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
@@ -48,3 +50,6 @@ Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= l
 
 </article>
 </section>
+  </div>
+</div>
+

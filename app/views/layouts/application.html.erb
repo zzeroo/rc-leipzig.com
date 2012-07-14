@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <title>Racing-Center Leipzig</title>
-  
-  <!-- mobile viewport optimisation -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing-Center Leipzig</title>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <!-- mobile viewport optimisation -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!--[if lte IE 7]>
-  <link rel="stylesheet" href="/stylesheets/yaml/core/iehacks.min.css" type="text/css"/>
-  <![endif]-->
-  
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-</head>
-<body>
-<header>
-  <div class="ym-wrapper">
-    <div class="ym-wbox">
-      <h1><%= link_to (image_tag "logo_100.gif"), :root %> Racing-Center Leipzig</h1>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/stylesheets/yaml/core/iehacks.min.css" type="text/css"/>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+        <h1><%= link_to (image_tag "logo_100.gif"), :root %> Racing-Center Leipzig</h1>
+      </div>
     </div>
-  </div>
-</header>
+    </header>
 
-<nav id="nav">
-  <div class="ym-wrapper">
-    <div class="ym-hlist">
+    <nav id="nav">
+    <div class="ym-wrapper">
+      <div class="ym-hlist">
         <ul>
           <li><%= link_to "Home", :root %></li>
           <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
@@ -39,31 +39,41 @@
           <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
           <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
           <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
-          <li><%= link_to "Über Uns", url_for(:controller => :home, :action => :about) %></li>
+          <li><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></li>
           <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
           <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
         </ul>
-      <form class="ym-searchform">
-        <input class="ym-searchfield" type="search" placeholder="Search..." />
-        <input class="ym-searchbutton" type="submit" value="Search" />
-      </form>
+        <form class="ym-searchform">
+          <input class="ym-searchfield" type="search" placeholder="Search..." />
+          <input class="ym-searchbutton" type="submit" value="Search" />
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+    </nav>
 
-<div id="main">
-  <div class="ym-wrapper">
+
     <%= yield %>
-  </div>
-</div>
 
 
-<footer>
-  <div class="ym-wrapper">
-    <div class="ym-wbox">
-      <p>© Racing-Center Leipzig 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
+    <footer>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+        <div class="ym-grid">
+          <div class="ym-g75 ym-gl">
+            <div class="ym-gbox">
+            </div>
+          </div>
+          <div class="ym-g25 ym-gr">
+            <div class="ym-gbox">
+              <p><a href="https://www.facebook.com/#!/profile.php?id=100003102578130&sk=wall" target="_blank"><img src="/assets/Facebook-find-uns.jpg" width="200" height="61" border="0"></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="ym-wbox">
+          <p>© Racing-Center Leipzig 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+    </footer>
 
-</html>
+  </html>

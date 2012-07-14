@@ -1,27 +1,32 @@
-<section class="box info"><div class="ym-grid linearize-level-1">
-<%= image_tag "race-flags-small.png" %>
-Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %>
-</div></section>
-<section>
-<article class="content">
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="box info"><div class="ym-grid linearize-level-1">
+      <%= image_tag "race-flags-small.png" %>
+      Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %>
+    </div></section>
+    <section>
+    <article class="content">
 
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 
-<h1><%= @event.title %></h1>
-<h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
+    <h1><%= @event.title %></h1>
+    <h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
 
-<p>
-  <b>Beschreibung:</b>
-  <%= @event.description %>
-</p>
+    <p>
+    <b>Beschreibung:</b>
+    <%= @event.description %>
+    </p>
 
-<p><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers), :class => "ym-button ym-play" %></b></p>
- 
+    <p><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers), :class => "ym-button ym-play" %></b></p>
 
-<p>
-<%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %>
-<%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
-</p>
 
-</article>
-</section>
+    <p>
+    <%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %>
+    <%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
+    </p>
+
+    </article>
+    </section>
+  </div>
+</div>
+

@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
   # GET /subscribers.json
   def index
     @event = Event.find(params[:event_id])
-    @subscribers = @event.subscribers.all
+    @subscribers = @event.subscribers.order(:lastname).page(params[:page]).per(5)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,3 +1,8 @@
+<section class="box info"><div class="ym-grid linearize-level-1"><%= image_tag "race-flags-small.png" %>
+Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste.</div></section>
+<section class="">
+<article class="content">
+
 <p id="notice"><%= notice %></p>
 
 <h1><%= @event.title %></h1>
@@ -8,45 +13,13 @@
   <%= @event.description %>
 </p>
 
-<% if @event.subscribers -%>
-  <p><b><%= link_to 'Nennliste:', event_subscribers_path(@event, @subscribers) %></b></p>
-  
-  <table id="subscribers">
-    <thead>
-      <tr>
-        <th>Vorname</th>
-        <th>Nachname</th>
-        <th>Email</th>
-        <th>Termin</th>
-        <th>Klasse</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
+<p><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers) %></b></p>
+ 
 
-    <% @event.subscribers.each do |subscriber| %>
-    </tbody>
-      <tr>
-        <td><%= subscriber.firstname %></td>
-        <td><%= subscriber.lastname %></td>
-        <td><%= subscriber.email %></td>
-        <td><%= subscriber.event_id %></td>
-        <td><%= subscriber.grade %></td>
-        <td><%= link_to 'Show', event_subscriber_path(@event, subscriber) %></td>
-        <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber) %></td>
-        <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
-<% end -%>
-
-<p>
-  <b><%= link_to 'In Nennliste eintragen', new_event_subscriber_path(@event) %></b>
-</p>
 <p>
 <%= link_to 'Bearbeiten', edit_event_path(@event) %> |
 <%= link_to 'Zurück zur Übersicht', events_path %>
 </p>
+
+</article>
+</section>

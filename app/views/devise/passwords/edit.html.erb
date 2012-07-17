@@ -1,16 +1,28 @@
-<h2>Change your password</h2>
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="ym-grid linearize-level-1">
+    <article class="ym-g99 ym-gl content">
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+    <h2>Passwort &auml;ndern</h2>
 
-  <div><%= f.label :password, "New password" %><br />
-  <%= f.password_field :password %></div>
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.hidden_field :reset_password_token %>
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <div class="ym-fbox-text">
+        <%= f.label :password, "Neues Passwort" %><br />
+        <%= f.password_field :password %></div>
 
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
+      <div class="ym-fbox-text">
+        <%= f.label :password_confirmation, "Passwort bestätigen" %><br />
+        <%= f.password_field :password_confirmation %></div>
 
-<%= render "devise/shared/links" %>
+      <div><%= f.submit "Password ändern", :class => "ym-button ym-add" %></div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+    </article>
+    </section>
+  </div>
+</div>

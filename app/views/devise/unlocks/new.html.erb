@@ -1,12 +1,22 @@
-<h2>Resend unlock instructions</h2>
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="ym-grid linearize-level-1">
+    <article class="ym-g99 ym-gl content">
 
-<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <h2>Entsperr-Informationen erneut versenden</h2>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+    <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.submit "Resend unlock instructions" %></div>
-<% end %>
+      <div class="ym-fbox-text">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %></div>
 
-<%= render "devise/shared/links" %>
+      <div><%= f.submit "Entsperr-Info erneut senden", :class => "ym-button ym-add" %></div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+
+  </div>
+</div>
+

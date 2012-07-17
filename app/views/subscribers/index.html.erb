@@ -2,7 +2,7 @@
   <div class="ym-wrapper">
     <section class="box info"><div class="ym-grid linearize-level-1">
       <%= image_tag "race-flags-small.png" %>
-      Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %>
+      Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%- if current_user %><%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %><%- end %>
     </div></section>
     <section>
     <article class="content">
@@ -13,24 +13,21 @@
     <table class="bordertable">
       <thead>
         <tr>
-          <th><%= sortable "Vorname", :firstname %>
-          <th><%= sortable "Nachname", :lastname %>
-          <th><%= sortable "Klasse", :grade %>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th><%= sortable "Vorname", :firstname %></th>
+          <th><%= sortable "Nachname", :lastname %></th>
+          <th><%= sortable "Klasse", :grade %></th>
         </tr>
       </thead>
 
       <% @subscribers.each do |subscriber| %>
-      </tbody>
+      <tbody>
       <tr>
         <td><%= subscriber.firstname %></td>
         <td><%= subscriber.lastname %></td>
         <td><%= subscriber.grade %></td>
-        <td><%= link_to 'Show', event_subscriber_path(@event, subscriber), :class => "ym-button ym-play" %></td>
-        <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber), :class => "ym-button ym-edit" %></td>
-        <td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td>
+        <%- if current_user.try(:admin) %><td><%= link_to 'Show', event_subscriber_path(@event, subscriber), :class => "ym-button ym-play" %></td><%- end %>
+        <%- if current_user.try(:admin) %><td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber), :class => "ym-button ym-edit" %></td><%- end %>
+        <%- if current_user.try(:admin) %><td><%= link_to 'Destroy', [@event, subscriber], method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td><%- end %>
       </tr>
     <% end %>
   </tbody>
@@ -48,6 +45,6 @@
 
 </article>
 </section>
+    </div>
   </div>
-</div>
 

@@ -14,9 +14,6 @@
         <th><%= sortable "Event", :title %></th>
         <th><%= sortable "Beschreibung", :desc %></th>
         <th><b>Nennliste</b></th>
-        <th></th>
-        <th></th>
-        <th></th>
       </tr>
 
       <% @events.each do |event| %>
@@ -26,8 +23,8 @@
           <td><%= link_to event.title, event %></td>
           <td><%= event.description %></td>
           <td><center><%= link_to event.subscribers.size, event_subscribers_path(event) %></center></td>
-          <td><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %></td>
-          <td><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td>
+          <%- if current_user.try(:admin?) %><td><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %></td><%- end %>
+          <%- if current_user.try(:admin?) %><td><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td><%- end %>
           <td><b><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %></b></td>
         </tr>
       <% end %>
@@ -35,7 +32,7 @@
 
     <br />
 
-    <p><%= link_to 'Neuer Termin', new_event_path, :class => "ym-button ym-add" %></p>
+    <%- if current_user.try(:admin?) %><p><%= link_to 'Neuer Termin', new_event_path, :class => "ym-button ym-add" %></p><%- end %>
     </article>
     </section>
   </div>

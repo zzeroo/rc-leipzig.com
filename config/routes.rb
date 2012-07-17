@@ -5,6 +5,8 @@ RcLeipzigCom::Application.routes.draw do
     resources :subscribers
   end
 
+  resources :users
+
   root :to => 'home#index'
   
   match ':controller(/:action(/:id))'

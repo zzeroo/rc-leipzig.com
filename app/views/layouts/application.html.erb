@@ -24,6 +24,15 @@
     <header>
     <div class="ym-wrapper">
       <div class="ym-wbox">
+        <div id="user_nav" class="ym-gr">  
+          <% if user_signed_in? %>  
+            Angemeldet als <%= current_user.email %>. Das bist du nicht?  
+            <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>  
+          <% else %>  
+            <%= link_to "Registieren", new_user_registration_path %> or  
+            <%= link_to "Anmelden", new_user_session_path %>  
+          <% end %>  
+        </div> 
         <h1><%= link_to (image_tag "logo_100.gif"), :root %> Racing-Center Leipzig</h1>
       </div>
     </div>
@@ -52,8 +61,12 @@
     </nav>
 
 
-    <p class="notice box info"><%= notice %></p>
-    <p class="alert box error"><%= alert %></p>
+    <div id="main">
+      <div class="ym-wrapper">
+        <%- unless notice.nil? %><p class="notice box info"><%= notice %></p><%- end %>
+        <%- unless alert.nil? %><p class="alert box error"><%= alert %></p><%- end %>
+      </div>
+    </div>
 
     <%= yield %>
 

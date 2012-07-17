@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
+  
   helper_method :sort_column, :sort_direction
   
   # GET /events

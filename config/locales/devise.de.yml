@@ -1,4 +1,9 @@
 de:
+  activerecord:
+    attributes:
+      user:  
+        login: "Benutzername oder Email Adresse"
+
   errors:
     messages:
       expired: "ist abgelaufen, bitte neu anfordern"

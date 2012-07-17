@@ -1,10 +1,11 @@
 class SubscribersController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   # GET /subscribers
   # GET /subscribers.json
   def index
     @event = Event.find(params[:event_id])
-    @subscribers = @event.subscribers.order(:lastname).page(params[:page]).per(5)
-    @allsubscribers = @event.subscribers
+    @subscribers = @event.subscribers.order(sort_column + ' ' + sort_direction).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -83,4 +84,14 @@ class SubscribersController < ApplicationController
       format.html { redirect_to event_subscribers_path(@event) }
     end
   end
+
+  private
+  def sort_column
+    Subscriber.column_names.include?(params[:sort]) ? params[:sort] : "lastname"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end

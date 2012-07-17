@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.order(sort_column + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +82,14 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  def sort_column
+    Event.column_names.include?(params[:sort]) ? params[:sort] : "startdate"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
 end

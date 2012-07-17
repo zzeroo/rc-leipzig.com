@@ -10,13 +10,12 @@
     <h1>Nennliste</h1>
     <h2><%= @event.title %></h2>
 
-    <table>
+    <table class="bordertable">
       <thead>
         <tr>
-          <th>Vorname</th>
-          <th>Nachname</th>
-          <th>Email</th>
-          <th>Klasse</th>
+          <th><%= sortable "Vorname", :firstname %>
+          <th><%= sortable "Nachname", :lastname %>
+          <th><%= sortable "Klasse", :grade %>
           <th></th>
           <th></th>
           <th></th>
@@ -28,7 +27,6 @@
       <tr>
         <td><%= subscriber.firstname %></td>
         <td><%= subscriber.lastname %></td>
-        <td><%= subscriber.email %></td>
         <td><%= subscriber.grade %></td>
         <td><%= link_to 'Show', event_subscriber_path(@event, subscriber), :class => "ym-button ym-play" %></td>
         <td><%= link_to 'Edit', edit_event_subscriber_path(@event, subscriber), :class => "ym-button ym-edit" %></td>

@@ -7,12 +7,12 @@
     <strong><p class="Stil1"><font face="Arial, Helvetica, sans-serif">Termine</font></p></strong>
     <p><strong><font size="4" face="Arial, Helvetica, sans-serif">An Rennwochenenden ist Samstags die Strecke f&uuml;r freies Training ge&ouml;ffnet. </font></strong></p>
 
-    <table>
+    <table class="bordertable">
       <tr>
-        <th>von:</th>
-        <th>bis:</th>
-        <th>Event</th>
-        <th>Beschreibung</th>
+        <th><%= sortable "von:", :startdate %></th>
+        <th><%= sortable "bis:", :enddate %></th>
+        <th><%= sortable "Event", :title %></th>
+        <th><%= sortable "Beschreibung", :desc %></th>
         <th><b>Nennliste</b></th>
         <th></th>
         <th></th>

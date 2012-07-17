@@ -26,8 +26,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+# Pagination
 gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
 
+# Authentication
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

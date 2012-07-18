@@ -26,7 +26,7 @@
       <div class="ym-wbox">
         <div id="user_nav" class="ym-gr">  
           <% if user_signed_in? %>  
-            <p>Angemeldet als <%= (current_user.username) ? current_user.username : current_user.email %>. Das bist du nicht?  
+            <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?  
             <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>  </p>
             <%- if current_user.try(:admin) %><p><%= link_to "Benutzerverwaltung", users_path %></p><%- end %>
           <% else %>  

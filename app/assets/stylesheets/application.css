@@ -13,7 +13,7 @@
  *= require_tree .
  */
 /* Google Font API */
-
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700);
              
 /* import core styles | Basis-Stylesheets einbinden */

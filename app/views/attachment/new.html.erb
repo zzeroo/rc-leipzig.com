@@ -1,0 +1,17 @@
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="box info"><div class="ym-grid linearize-level-1"><%= image_tag "race-flags-small.png" %></div></section>
+    <section class="ym-grid linearize-level-1">
+    <article class="ym-g99 ym-gl content">
+
+
+    <%= form_for @attachment do |f| %>
+      <%= f.file_field :filename %>
+      <%= f.submit "save" %>
+    <% end %>
+
+    </article>
+    </section>
+  </div>
+</div>
+

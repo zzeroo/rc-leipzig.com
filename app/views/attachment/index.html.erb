@@ -1,0 +1,30 @@
+<div id="main">
+  <div class="ym-wrapper">
+    <section class="box info"><div class="ym-grid linearize-level-1"><%= image_tag "race-flags-small.png" %></div></section>
+    <section class="ym-grid linearize-level-1">
+    <article class="ym-g99 ym-gl content">
+    <h1>Attachments</h1>
+
+    <table class="bordertable">
+      <tr>
+        <th>Filename</th>
+        <th>Path</th>
+      </tr>
+      <% @attachments.each do |attachment| %>
+        <tr>
+          <td><%= link_to attachment.filename, attachment %></td>
+          <td><%= link_to attachment.path, attachment.path %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to "neues File hochladen", new_attachment_path %>
+
+
+    </article>
+    </section>
+  </div>
+</div>
+

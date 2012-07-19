@@ -1,5 +1,23 @@
 
 
+
+
+Konfiguration der Anwendung
+===
+Techisches
+---
+Ich habe das Rails-Config gem verwendet https://github.com/railsjedi/rails_config
+
+Die Konfiguration erfolg über die Dateien
+    config/settings.yml
+    config/settings/development.yml
+    config/settings/production.yml
+    config/settings/test.yml
+
+abhänging von der jeweiligen Umgebung.
+
+
+
 Kaminari
 ===
 Installation

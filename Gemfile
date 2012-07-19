@@ -28,9 +28,9 @@ end
 gem 'jquery-rails'
 # Pagination
 gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
-
-# Authentication
 gem 'devise'
+gem "rails_config"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

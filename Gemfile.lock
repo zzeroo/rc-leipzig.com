@@ -97,6 +97,8 @@ GEM
       activesupport (= 3.2.6)
       bundler (~> 1.0)
       railties (= 3.2.6)
+    rails_config (0.3.1)
+      activesupport (>= 3.0)
     railties (3.2.6)
       actionpack (= 3.2.6)
       activesupport (= 3.2.6)
@@ -143,6 +145,7 @@ DEPENDENCIES
   kaminari!
   pg
   rails (= 3.2.6)
+  rails_config
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer

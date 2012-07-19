@@ -18,8 +18,8 @@
 
       <% @events.each do |event| %>
         <tr>
-          <td><%= event.startdate.strftime('%d.%m.%Y') %></td>
-          <td><%= event.enddate.strftime('%d.%m.%Y') %></td>
+          <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
+          <td><%= event.enddate.strftime('%d.%m.%Y') unless event.enddate.nil? %></td>
           <td><%= link_to event.title, event %></td>
           <td><%= event.description %></td>
           <td><center><%= link_to event.subscribers.size, event_subscribers_path(event) %></center></td>

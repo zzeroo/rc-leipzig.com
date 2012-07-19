@@ -1,0 +1,10 @@
+# Die Passworte sind via `heroku config:add FTP_PASSWORD=8xyz32` gesetzt.
+# Siehe auch die README oder PASSWORTE (local)
+
+ftp:
+  server: ENV['FTP_SERVER']
+  public_url: ENV['FTP_PUBLIC_URL']
+  username: ENV['FTP_USERNAME']
+  password: ENV['FTP_PASSWORD']
+
+

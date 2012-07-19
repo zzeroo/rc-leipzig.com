@@ -16,6 +16,29 @@ Die Konfiguration erfolg über die Dateien
 
 abhänging von der jeweiligen Umgebung.
 
+In der Datei config/settings.local.ym. (nicht im Git repo wegen der Passworte)
+sind die Passworte in Klartext enthalten. Das macht in der localen Umgebung 
+nichts.
+
+Für die Heroku Umgebung (Production) ist eine andere Lösung nötig. In der für
+die Produktion entscheidenen Konfigurationsdatei config/settings/production.yml
+stehen keine Klartext Passworte, hier sind lediglich Einträge wie diese
+    
+    ftp:
+      server: ENV['FTP_SERVER']
+      public_url: ENV['FTP_PUBLIC_URL']
+
+Die ENV[''] Einträge werden durch die Umgebungsvariablen des Development
+Rechners ersetzt (heroku config:add FTP_SERVER=rc-leipzig.com). 
+Siehe dazu auch den Heroku Abschnitt dieser README.
+
+
+Heroku
+===
+Verschiedene Versionen verwalten
+---
+https://devcenter.heroku.com/articles/multiple-environments
+
 
 
 Kaminari

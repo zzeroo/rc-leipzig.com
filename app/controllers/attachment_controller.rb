@@ -23,7 +23,7 @@ class AttachmentController < ApplicationController
     @attachment = Attachment.new(params[:attachment])
     @upload = upload(params[:attachment][:filename])
     @attachment.filename = params[:attachment][:filename].original_filename
-    @attachment.path = "http://localhost/" + params[:attachment][:filename].original_filename
+    @attachment.path = File.join(Settings.ftp.public_url, params[:attachment][:filename].original_filename)
     respond_to do |format|
       if @attachment.save
         format.html { redirect_to @attachment, notice: 'Anhang erfolgreich gespeichert.' }
@@ -58,9 +58,9 @@ class AttachmentController < ApplicationController
 
   def upload(attachment)
     file = attachment
-    ftp = Net::FTP.new('localhost')
+    ftp = Net::FTP.new(Settings.ftp.server)
     ftp.passive = true
-    ftp.login(user = "smueller", passwd = "asrael")
+    ftp.login(user = Settings.ftp.username, passwd = Settings.ftp.password)
     ftp.storbinary("STOR " + file.original_filename, file, Net::FTP::DEFAULT_BLOCKSIZE)
     ftp.quit()
   end

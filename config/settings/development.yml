@@ -1,0 +1,13 @@
+# Es ist nötig vor dem `rails server` Komando die Umgebungsvariablen zu setzen.
+# export FTP_SERVER=rc-leipzig.com   
+# export FTP_PUBLIC_URL="http://www.rc-leipzig.com/rc-leipzig-test" 
+# export FTP_USERNAME="u36904762-test"                                                                                                                           
+# export FTP_PASSWORD=sonne123\! 
+
+ftp:
+  server:     <%= ENV['FTP_SERVER'] %>
+  public_url: <%= ENV['FTP_PUBLIC_URL'] %>
+  username:   <%= ENV['FTP_USERNAME'] %>
+  password:   <%= ENV['FTP_PASSWORD'] %>
+
+

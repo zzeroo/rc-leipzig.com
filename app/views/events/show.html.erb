@@ -10,17 +10,23 @@
     <h1><%= @event.title %></h1>
     <h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
 
-    <p><b>Beschreibung:</b><br />
-    <%= @event.description %>
-    </p>
+    <div><b>Beschreibung:</b><br />
+      <%= @event.description %>
+    </div>
 
-    <p><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers), :class => "ym-button ym-play" %></b></p>
+    <div><b>Anhänge</b><br />
+      <% @event.attachments.each do |attachment| -%>
+        <div><%= attachment.title %></div>
+      <% end -%>
+    </div>
+
+    <div><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers), :class => "ym-button ym-play" %></b></div>
 
 
-    <p>
-    <%- if current_user.try(:admin) %><%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %><%- end %>
-    <%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
-    </p>
+    <div>
+      <%- if current_user.try(:admin) %><%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %><%- end %>
+      <%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
+    </div>
 
     </article>
     </section>

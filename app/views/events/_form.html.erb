@@ -4,9 +4,9 @@
       <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
 
       <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -25,9 +25,18 @@
   </div>
   <div class="ym-fbox-select">
     <%= f.label "Beschreibung" %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :rows => 5 %>
+  </div>
+  <div id="attachments">
+    <%#= render :partial => 'attachment', :collection => @event.attachments %>
+  </div>
+  <%= f.fields_for :attachments do |builder| %>
+    <%= render "attachment_fields", :f => builder %>
+  <% end %>
+  <div>
+    <%= link_to_add_fields "Upload hinzufügen", f, :attachments %>
   </div>
   <div class="ym-fbox-button">
-    <%= f.submit "Termin erstellen", :class => "ym-button ym-add" %>
+    <%= f.submit "Termin speichern", :class => "ym-button ym-add" %>
   </div>
 <% end %>

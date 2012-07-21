@@ -29,8 +29,7 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    3.times { @event.attachments.build }
-    @event.attachments.build
+    3.times { @event.file_uploads.build }
 
     respond_to do |format|
       format.html # new.html.erb

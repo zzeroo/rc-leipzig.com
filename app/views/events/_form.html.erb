@@ -1,37 +1,55 @@
 <%= form_for(@event, :class => "ym-form linearize-form ym-columnar") do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation" class="box error">
-      <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
+    <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
 
-      <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
     </div>
   <% end %>
 
   <div class="ym-fbox-text">
-    <%= f.label "Titel" %><br />
-    <%= f.text_field :title %>
+  <%= f.label "Titel" %><br />
+  <%= f.text_field :title %>
   </div>
   <div class="ym-fbox-text">
-    <%= f.label "Von" %><br />
-    <%= f.date_select :startdate %>
+  <%= f.label "Von" %><br />
+  <%= f.date_select :startdate %>
   </div>
   <div class="ym-fbox-text">
-    <%= f.label "Bis" %><br />
-    <%= f.date_select :enddate %>
+  <%= f.label "Bis" %><br />
+  <%= f.date_select :enddate %>
   </div>
   <div class="ym-fbox-select">
-    <%= f.label "Beschreibung" %><br />
-    <%= f.text_area :description, :rows => 5 %>
+  <%= f.label "Beschreibung" %><br />
+  <%= f.text_area :description, :rows => 5 %>
   </div>
-  <%= f.fields_for :attachments do |builder| %>
-    <%= render "attachment_fields", :f => builder %>
-  <% end %>
   <div>
-    <%#= link_to_add_fields "Upload hinzufügen", f, :attachments %>
+  <%= f.fields_for :file_uploads do |builder| %>
+    <div>
+    <%= builder.text_field :title %><br />
+    <%= builder.file_field :filename %><br />
+    <%= builder.check_box :_destroy %><br />
+    <%= builder.text_area :description, :rows => 3 %>
+    </div>
+  <% end %>
+  </div>
+  <div style="display:none">
+  <#% @event.file_uploads.each_with_index do |file_upload, index| %>
+    <#%= hidden_field_tag "event[file_uploads_attributes][#{index}][id]", file_upload.id %>
+    <#%= label "event[file_uploads_attributes][#{index}]", :title, "Datei Titel" %><br />
+    <#%= text_field_tag "event[file_uploads_attributes][#{index}][title]", file_upload.title %><br />
+    <#%= label "event[file_uploads_attributes][#{index}]", :filename, "Datei auswählen" %><br />
+    <#%= file_field_tag "event[file_uploads_attributes][#{index}][filename]", :value => file_upload.filename %><br />
+    <#%= label "event[file_uploads_attributes][#{index}]", :_destroy, "Datei löschen?" %>
+    <#%= check_box_tag "event[file_uploads_attributes][#{index}][_destroy]" %><br />
+    <#% end -%>
+    <p>
+    <#%= link_to_add_fields "Upload hinzufügen", f, :attachments %>
+    </p>
   </div>
   <div class="ym-fbox-button">
     <%= f.submit "Termin speichern", :class => "ym-button ym-add" %>

@@ -1,4 +1,12 @@
 RcLeipzigCom::Application.routes.draw do
+  get "file_upload/create"
+
+  get "file_upload/index"
+
+  get "file_upload/show"
+
+  get "file_upload/destroy"
+
   # get "attachment/index"
   # get "attachment/show"
   # get "attachment/new"

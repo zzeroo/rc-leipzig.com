@@ -15,8 +15,10 @@
     </div>
 
     <div><b>Anhänge</b><br />
-      <% @event.attachments.each do |attachment| -%>
-        <div><%= attachment.title %></div>
+      <% @event.file_uploads.each do |file_upload| -%>
+        <div><%= file_upload.title %></div>
+        <div><%= file_upload.filename %></div>
+        <div><%= file_upload.description %></div>
       <% end -%>
     </div>
 

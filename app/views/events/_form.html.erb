@@ -27,14 +27,11 @@
     <%= f.label "Beschreibung" %><br />
     <%= f.text_area :description, :rows => 5 %>
   </div>
-  <div id="attachments">
-    <%#= render :partial => 'attachment', :collection => @event.attachments %>
-  </div>
   <%= f.fields_for :attachments do |builder| %>
     <%= render "attachment_fields", :f => builder %>
   <% end %>
   <div>
-    <%= link_to_add_fields "Upload hinzufügen", f, :attachments %>
+    <%#= link_to_add_fields "Upload hinzufügen", f, :attachments %>
   </div>
   <div class="ym-fbox-button">
     <%= f.submit "Termin speichern", :class => "ym-button ym-add" %>

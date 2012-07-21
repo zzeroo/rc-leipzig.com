@@ -3,11 +3,23 @@
     <section class="box info"><div class="ym-grid linearize-level-1"><%= image_tag "race-flags-small.png" %></div></section>
     <section class="ym-grid linearize-level-1">
     <article class="ym-g99 ym-gl content">
-
+    
+    <h1>Dateiupload</h1>
 
     <%= form_for @attachment do |f| %>
-      <%= f.file_field :filename %>
-      <%= f.submit "save" %>
+      <div>
+        <%= f.label :title, "Dateiname" %><br />
+        <%= f.text_field :title %>
+      </div>
+      <div>
+        <%= f.label :filename, "Datei wählen" %><br />
+        <%= f.file_field :filename %>
+      </div>
+      <div>
+        <%= f.label :description, "Beschreibung" %><br />
+        <%= f.text_area :description, :rows => 5 %>
+      </div>
+      <%= f.submit "save", :class => "ym-button" %>
     <% end %>
 
     </article>

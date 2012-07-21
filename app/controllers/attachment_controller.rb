@@ -21,9 +21,10 @@ class AttachmentController < ApplicationController
   # Solution for file upload found here: http://www.prodevtips.com/2010/03/15/file-uploading-in-ror/
   def create
     @attachment = Attachment.new(params[:attachment])
-    @upload = upload(params[:attachment][:filename])
-    @attachment.filename = params[:attachment][:filename].original_filename
-    @attachment.path = File.join(Settings.ftp.public_url, params[:attachment][:filename].original_filename)
+    @upload = upload(@attachment.filename)
+    @attachment.filename = @attachment.filename.original_filename
+    @attachment.path = File.join(Settings.ftp.public_url, @attachment.filename)
+    
     respond_to do |format|
       if @attachment.save
         format.html { redirect_to @attachment, notice: 'Anhang erfolgreich gespeichert.' }

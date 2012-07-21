@@ -30,6 +30,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     3.times { @event.attachments.build }
+    @event.attachments.build
 
     respond_to do |format|
       format.html # new.html.erb

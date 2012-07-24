@@ -21,6 +21,9 @@
     <![endif]-->
   </head>
   <body>
+    <div>
+      <%= image_tag "beta_badge.png", :alt => 'beta-badge', :id => 'beta-badge' %>
+    </div>
     <header>
     <div class="ym-wrapper">
       <div class="ym-wbox">
@@ -52,7 +55,6 @@
           <li><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></li>
           <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
           <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
-          <% if current_user.try(:admin) %><li><%= link_to "File Upload", attachments_path %></li><% end %>
         </ul>
         <form class="ym-searchform">
           <input class="ym-searchfield" type="search" placeholder="Search..." />

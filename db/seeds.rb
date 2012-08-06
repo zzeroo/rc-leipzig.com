@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+user = User.find_or_create_by_username(
+  :email  => "test@test.com",
+  :password => "asrael",
+  :password_confirmation => "asrael",
+  :username => "zzeroo"
+)
+
+user.reload
+User.find_by_username("zzeroo").update_attribute(:admin, true)

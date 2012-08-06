@@ -46,4 +46,16 @@ class EventsControllerTest < ActionController::TestCase
 
     assert_redirected_to events_path
   end
+
+# eigene  
+  
+  test "should create event with file attachment" do
+    assert_difference('Event.count') do
+      @event = events(:file)
+      post :create, event: { description: @event.description, enddate: @event.enddate, startdate: @event.startdate, title: @event.title }
+    end
+
+    assert_redirected_to event_path(assigns(:event))
+  end
+
 end

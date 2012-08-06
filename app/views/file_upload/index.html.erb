@@ -1,2 +1,5 @@
-<h1>FileUpload#index</h1>
-<p>Find me in app/views/file_upload/index.html.erb</p>
+<ol>
+  <% @file_upload.each do |file_upload| %>
+    <li><%= file_upload.title %></li>
+  <% end %>
+</ol>

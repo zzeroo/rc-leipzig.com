@@ -17,7 +17,7 @@
     <div><b>Anhänge</b><br />
       <% @event.file_uploads.each do |file_upload| -%>
         <div><%= file_upload.title %></div>
-        <div><%= file_upload.filename %></div>
+        <div><%= file_upload.file %></div>
         <div><%= file_upload.description %></div>
       <% end -%>
     </div>

@@ -11,3 +11,16 @@ two:
   enddate: 2012-07-10
   title: MyString
   description: MyText
+
+file:
+  startdate: 2012-07-11
+  enddate: 2012-07-12
+  title: Event with Attachment
+  description: This is a event with one attached file
+  file:
+    title: MyString
+    description: MyText
+    path: MyString
+    filename: MyString
+    uploadable_id: 1
+    uploadable_type: MyString

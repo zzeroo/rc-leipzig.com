@@ -31,25 +31,11 @@
   <%= f.fields_for :file_uploads do |builder| %>
     <div>
     <%= builder.text_field :title %><br />
-    <%= builder.file_field :filename %><br />
+    <%= builder.file_field :file %><br />
     <%= builder.check_box :_destroy %><br />
     <%= builder.text_area :description, :rows => 3 %>
     </div>
   <% end %>
-  </div>
-  <div style="display:none">
-  <#% @event.file_uploads.each_with_index do |file_upload, index| %>
-    <#%= hidden_field_tag "event[file_uploads_attributes][#{index}][id]", file_upload.id %>
-    <#%= label "event[file_uploads_attributes][#{index}]", :title, "Datei Titel" %><br />
-    <#%= text_field_tag "event[file_uploads_attributes][#{index}][title]", file_upload.title %><br />
-    <#%= label "event[file_uploads_attributes][#{index}]", :filename, "Datei auswählen" %><br />
-    <#%= file_field_tag "event[file_uploads_attributes][#{index}][filename]", :value => file_upload.filename %><br />
-    <#%= label "event[file_uploads_attributes][#{index}]", :_destroy, "Datei löschen?" %>
-    <#%= check_box_tag "event[file_uploads_attributes][#{index}][_destroy]" %><br />
-    <#% end -%>
-    <p>
-    <#%= link_to_add_fields "Upload hinzufügen", f, :attachments %>
-    </p>
   </div>
   <div class="ym-fbox-button">
     <%= f.submit "Termin speichern", :class => "ym-button ym-add" %>

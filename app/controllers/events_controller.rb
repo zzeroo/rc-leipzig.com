@@ -46,6 +46,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
+    @event.process
 
     respond_to do |format|
       if @event.save
@@ -86,6 +87,7 @@ class EventsController < ApplicationController
     end
   end
   
+
   private
   def sort_column
     Event.column_names.include?(params[:sort]) ? params[:sort] : "startdate"

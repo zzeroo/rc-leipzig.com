@@ -1,10 +1,12 @@
 class FileUploadController < ApplicationController
+
   def index
-    @file_uploads = FileUpload.all
+    @file_upload = FileUpload.all
   end
 
   def create
     @file_upload = FileUpload.new(params[:file_upload])
+    @file_upload.save
   end
 
   def show
@@ -17,4 +19,5 @@ class FileUploadController < ApplicationController
 
     redirect_to file_uploads_path
   end
+
 end

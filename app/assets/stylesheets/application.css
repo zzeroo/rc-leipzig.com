@@ -21,6 +21,7 @@
              
 /* import screen layout | Screen-Layout einbinden */
 @import url(/stylesheets/yaml/navigation/hlist.css);
+@import url(/stylesheets/yaml/navigation/vlist.css);
 @import url(/stylesheets/yaml/forms/gray-theme.css);
              
 @import url(/stylesheets/yaml/screen/typography.css);

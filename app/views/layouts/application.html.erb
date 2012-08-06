@@ -24,76 +24,30 @@
     <div>
       <%= image_tag "beta_badge.png", :alt => 'beta-badge', :id => 'beta-badge' %>
     </div>
+
     <header>
-    <div class="ym-wrapper">
-      <div class="ym-wbox">
-        <div id="user_nav" class="ym-gr">  
-          <% if user_signed_in? %>  
-            <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?  
-            <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>  </p>
-            <%- if current_user.try(:admin) %><%= link_to "Benutzerverwaltung", users_path %></p><%- end %>
-          <% else %>  
-            <%= link_to "Registieren", new_user_registration_path %> or  
-            <%= link_to "Anmelden", new_user_session_path %>  
-          <% end %>  
-        </div> 
-        <h1><%= link_to (image_tag "logo_100.gif"), :root %> Racing-Center Leipzig</h1>
-      </div>
-    </div>
     </header>
 
-    <nav id="nav">
-    <div class="ym-wrapper">
-      <div class="ym-hlist">
-        <ul>
-          <li><%= link_to "Home", :root %></li>
-          <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
-          <li><%= link_to "Termine", :events %></li>
-          <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
-          <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
-          <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
-          <li><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></li>
-          <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
-          <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
-        </ul>
-        <form class="ym-searchform">
-          <input class="ym-searchfield" type="search" placeholder="Search..." />
-          <input class="ym-searchbutton" type="submit" value="Search" />
-        </form>
-      </div>
-    </div>
+
+    <nav class="ym-vlist">
+    <ul>
+      <li><%= link_to "Home", :root %></li>
+      <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
+      <li><%= link_to "Termine", :events %></li>
+      <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
+      <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
+      <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
+      <li><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></li>
+      <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
+      <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
+    </ul>
     </nav>
 
 
     <div id="main">
-      <div class="ym-wrapper">
-        <%- unless notice.nil? %><p class="notice box success"><%= notice %></p><%- end %>
-        <%- unless alert.nil? %><p class="alert box error"><%= alert %></p><%- end %>
-      </div>
     </div>
-
-    <%= yield %>
-
 
     <footer>
-    <div class="ym-wrapper">
-      <div class="ym-wbox">
-        <div class="ym-grid">
-          <div class="ym-g75 ym-gl">
-            <div class="ym-gbox">
-            </div>
-          </div>
-          <div class="ym-g25 ym-gr">
-            <div class="ym-gbox">
-              <p><a href="https://www.facebook.com/#!/profile.php?id=100003102578130&sk=wall" target="_blank"><img src="/assets/Facebook-find-uns.jpg" width="200" height="61" border="0"></a></p>
-            </div>
-          </div>
-        </div>
-        <div class="ym-wbox">
-          <p>© Racing-Center Leipzig 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
-        </div>
-      </div>
-    </div>
     </footer>
 
   </html>

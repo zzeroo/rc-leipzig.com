@@ -31,6 +31,8 @@ gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
 gem 'devise'
 gem "rails_config"
 
+# Better webserver? (20:13 07.08.2012)
+gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

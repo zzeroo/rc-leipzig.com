@@ -21,15 +21,23 @@
     <![endif]-->
   </head>
   <body>
+
     <div>
       <%= image_tag "beta_badge.png", :alt => 'beta-badge', :id => 'beta-badge' %>
     </div>
 
     <header>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+        ...
+      </div>
+    </div>
     </header>
 
+    <div>
+      <%= yield %>
+    </div>
 
-    <nav class="ym-vlist">
     <ul>
       <li><%= link_to "Home", :root %></li>
       <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
@@ -41,13 +49,9 @@
       <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
       <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
     </ul>
-    </nav>
-
-
-    <div id="main">
-    </div>
 
     <footer>
     </footer>
 
-  </html>
+  </body>
+</html>

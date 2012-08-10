@@ -1,7 +1,5 @@
-#beta-badge {
-  position: fixed;
-  right: 0px;
-  top: 0px;
-  z-index: 100;
-  border: none;
+.ym-wrapper {
+  min-width: 760px;
+  max-width: 80em;
 }
+.ym-wbox { padding: 10px; }

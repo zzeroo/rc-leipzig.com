@@ -21,37 +21,51 @@
     <![endif]-->
   </head>
   <body>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+
+        <header>
+        <h1><span>RC-Leipzig.com</span></h1>
+        </header>
+
+
+
+        <div id="main">
+          <div class="ym-column linearize-level-1">
+            <div class="ym-col1">
+              <div class="ym-cbox">
+                <%= yield %>
+              </div>
+            </div>
+
+            <aside class="ym-col3">
+            <div class="ym-cbox">
+              <ul>
+                <li><%= link_to "Home", :root %></li>
+                <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
+                <li><%= link_to "Termine", :events %></li>
+                <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
+                <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
+                <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
+                <li><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></li>
+                <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
+                <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
+              </ul>
+            </div>
+            </aside>
+
+          </div>
+        </div>
+
+        <footer role="contentinfo">
+        </footer>
+
+      </div>
+    </div>
+
 
     <div>
       <%= image_tag "beta_badge.png", :alt => 'beta-badge', :id => 'beta-badge' %>
     </div>
-
-    <header>
-    <div class="ym-wrapper">
-      <div class="ym-wbox">
-        ...
-      </div>
-    </div>
-    </header>
-
-    <div>
-      <%= yield %>
-    </div>
-
-    <ul>
-      <li><%= link_to "Home", :root %></li>
-      <li><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></li>
-      <li><%= link_to "Termine", :events %></li>
-      <li><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></li>
-      <li><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></li>
-      <li><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></li>
-      <li><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></li>
-      <li><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></li>
-      <li><a href="http://www.broemme-racing.de/">Galerie</a></li>
-    </ul>
-
-    <footer>
-    </footer>
-
   </body>
 </html>

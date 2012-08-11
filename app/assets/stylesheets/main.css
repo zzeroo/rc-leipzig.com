@@ -14,7 +14,7 @@ body > header { min-width: 760px; height: 100px; }
 .ym-column { 
   display: block;
   overflow: hidden;
-  padding-right: 350px; /* column width */
+  padding-right: 300px; /* column width */
   width: auto;
 }
 .ym-col1 {  /* content */
@@ -25,8 +25,8 @@ body > header { min-width: 760px; height: 100px; }
 .ym-col3 { /* sidebar */
   position: relative;
   float: left;
-  width: 350px; /* column width */
-  margin: 0 -350px 0 0;
+  width: 300px; /* column width */
+  margin: 0 -300px 0 0;
 }
 
 body { background: #ddd; }
@@ -71,11 +71,15 @@ header h1 span {
 }
 
 #contentdiv { 
-  background: #fff; 
   padding-top: 35px;
+  overflow: hidden; 
+}
+#contentdivwrapper { 
+  background: #fff; 
+  padding-bottom: 35px;
+  padding-right: 200px;
   margin-right: -200px;
 }
-
 
 #beta-badge {
   position: fixed;

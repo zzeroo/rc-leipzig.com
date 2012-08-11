@@ -31,7 +31,7 @@
 
 	/* Basic Element Styling */
 	header {
-		background: #444;
+		background: transparent;
 		color: #ccc;
 		padding: 1.5em;
 	}
@@ -50,7 +50,7 @@
 
 	footer {
 		margin: 1.5em 0 0 0;
-		background: #eee;
+		background: transparent;
 		color: #444;
 		padding: 1.5em;
 	}

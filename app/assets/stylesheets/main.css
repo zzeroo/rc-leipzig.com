@@ -1,5 +1,79 @@
+body > header { min-width: 760px; height: 100px; }
 .ym-wrapper {
-  min-width: 760px;
   max-width: 80em;
 }
 .ym-wbox { padding: 10px; }
+
+/*
+ * |-------------------------------------------------------|
+ * | content                             | sidebar         |
+ * | col 1 | flexible                    | col 3 | fixed   |
+ * |                                     |                 |
+ * |-------------------------------------------------------|
+ */
+.ym-column { 
+  display: block;
+  overflow: hidden;
+  padding-right: 350px; /* column width */
+  width: auto;
+}
+.ym-col1 {  /* content */
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.ym-col3 { /* sidebar */
+  position: relative;
+  float: left;
+  width: 350px; /* column width */
+  margin: 0 -350px 0 0;
+}
+
+body { background: #ddd; }
+
+header, footer { background: transparent; }
+
+header h1 span {
+  display: inline-block;
+  overflow: hidden;
+  height: 0;
+  width: 365px;
+  padding-top: 67px;
+  margin-bottom: 0px;
+  background: url(rcl-logo-neu.png) no-repeat top left;
+}
+
+#sitenavi { list-style: none; }
+#sitenavi li { 
+  background: url(menu_gray.png) 0 100% no-repeat;  
+  padding-top: 0.3em; 
+}
+#sitenavi li div { 
+  height: 40px; 
+  width: 292px; 
+  margin: 8px 0px;
+  font-weight: bold;
+  font-family: sans;
+  font-size: 26px;
+}
+#sitenavi li div a { 
+  display: inline-block;
+  width: 100%;
+  padding: 8px;
+  color: #fff; 
+}
+#sitenavi a:hover { background: transparent; }
+#sitenavi li div.nav_menu { 
+}
+#sitenavi div.nav_menu_active {background: url(menu_yellow.png) 0 100% no-repeat;}
+
+#contentdiv { background: #fff; margin-right: -200px; }
+
+
+#beta-badge {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 100;
+  border: none;
+}

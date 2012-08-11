@@ -17,7 +17,11 @@ module ApplicationHelper
 
   # Page Menu yellow background on active pages
   def is_active?(page_name)
-    "active" if params[:controller] == page_name #|| params[:action] == page_name
+    if params[:controller] == 'home'
+      "active" if params[:action] == page_name
+    else
+      "active" if params[:controller] == page_name
+    end
   end
 
 end

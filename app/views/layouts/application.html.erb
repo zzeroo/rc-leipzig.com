@@ -26,7 +26,7 @@
       <div class="ym-wbox">
         <div id="user_nav" class="ym-gr">  
           <% if user_signed_in? %>  
-            <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?  
+            <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?<br /> 
             <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>  </p>
             <%- if current_user.try(:admin) %><%= link_to "Benutzerverwaltung", users_path %></p><%- end %>
           <% else %>  
@@ -39,7 +39,7 @@
       </div>
     </div>
     </header>
-
+    
     <div id="main">
       <div class="ym-wrapper">
         <div class="ym-wbox">
@@ -51,15 +51,20 @@
             </div>
             <div class="ym-col3">
               <div class="ym-cbox">
-                <ul id="sitenavi">
-                  <li class="<%= is_active?("index") %>"><div class="nav_menu"><%= link_to "Start", :root %></div></li>
-                  <li class="<%= is_active?("course") %>"><div class="nav_menu"><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></div></li>
-                  <li class="<%= is_active?("events") %>"><div class="nav_menu"><%= link_to "Termine", :events %></div></li>
-                  <li class="<%= is_active?("recorde") %>"><div class="nav_menu"><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></div></li>
-                  <li class="<%= is_active?("arrival") %>"><div class="nav_menu"><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></div></li>
-                  <li class="<%= is_active?("contact") %>"><div class="nav_menu"><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></div></li>
-                  <li class="<%= is_active?("about") %>"><div class="nav_menu"><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></div></li>
-                </ul>
+                <div>
+                  <ul id="sitenavi">
+                    <li class="<%= is_active?("index") %>"><div class="nav_menu"><%= link_to "Start", :root %></div></li>
+                    <li class="<%= is_active?("course") %>"><div class="nav_menu"><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></div></li>
+                    <li class="<%= is_active?("events") %>"><div class="nav_menu"><%= link_to "Termine", :events %></div></li>
+                    <li class="<%= is_active?("recorde") %>"><div class="nav_menu"><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></div></li>
+                    <li class="<%= is_active?("arrival") %>"><div class="nav_menu"><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></div></li>
+                    <li class="<%= is_active?("contact") %>"><div class="nav_menu"><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></div></li>
+                    <li class="<%= is_active?("about") %>"><div class="nav_menu"><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></div></li>
+                  </ul>
+                </div>
+                <div class="ym-gr">
+                  <p><a href="https://www.facebook.com/#!/profile.php?id=100003102578130&sk=wall" target="_blank"><img src="/assets/Facebook-find-uns.jpg" width="200" height="61" border="0"></a></p>
+                </div>
               </div>
             </div>
           </div>

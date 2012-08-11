@@ -31,7 +31,10 @@ body > header { min-width: 760px; height: 100px; }
 
 body { background: #ddd; }
 
-header, footer { background: transparent; }
+header, footer { 
+  background: transparent; 
+  color: #333;
+}
 
 header h1 span {
   display: inline-block;
@@ -48,6 +51,7 @@ header h1 span {
   background: url(menu_gray.png) 0 100% no-repeat;  
   padding-top: 0.3em; 
 }
+#sitenavi li.active {background: url(menu_yellow.png) 0 100% no-repeat;}
 #sitenavi li div { 
   height: 40px; 
   width: 292px; 
@@ -65,9 +69,12 @@ header h1 span {
 #sitenavi a:hover { background: transparent; }
 #sitenavi li div.nav_menu { 
 }
-#sitenavi div.nav_menu_active {background: url(menu_yellow.png) 0 100% no-repeat;}
 
-#contentdiv { background: #fff; margin-right: -200px; }
+#contentdiv { 
+  background: #fff; 
+  padding-top: 35px;
+  margin-right: -200px;
+}
 
 
 #beta-badge {

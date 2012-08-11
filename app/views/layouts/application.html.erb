@@ -24,11 +24,21 @@
     <header>
     <div class="ym-wrapper">
       <div class="ym-wbox">
+        <div id="user_nav" class="ym-gr">  
+          <% if user_signed_in? %>  
+            <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?  
+            <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>  </p>
+            <%- if current_user.try(:admin) %><%= link_to "Benutzerverwaltung", users_path %></p><%- end %>
+          <% else %>  
+            <%= link_to "Registieren", new_user_registration_path %> or  
+            <%= link_to "Anmelden", new_user_session_path %>  
+          <% end %>  
+        </div> 
+
         <h1><span>RC-Leipzig.com</span></h1>
       </div>
     </div>
     </header>
-
 
     <div id="main">
       <div class="ym-wrapper">
@@ -42,15 +52,13 @@
             <div class="ym-col3">
               <div class="ym-cbox">
                 <ul id="sitenavi">
-                  <li><div class="nav_menu"><%= link_to "Home", :root %></div></li>
-                  <li><div class="nav_menu"><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></div></li>
-                  <li><div class="nav_menu"><%= link_to "Termine", :events %></div></li>
-                  <li><div class="nav_menu"><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></div></li>
-                  <li><div class="nav_menu"><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></div></li>
-                  <li><div class="nav_menu"><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></div></li>
-                  <li><div class="nav_menu"><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></div></li>
-                  <li><div class="nav_menu"><a href="http://www.xn--modellbauldchen-9kb.de/modellbau/">Shop</a></div></li>
-                  <li><div class="nav_menu"><a href="http://www.broemme-racing.de/">Galerie</a></div></li>
+                  <li class="<%= is_active?("index") %>"><div class="nav_menu"><%= link_to "Start", :root %></div></li>
+                  <li class="<%= is_active?("course") %>"><div class="nav_menu"><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></div></li>
+                  <li class="<%= is_active?("events") %>"><div class="nav_menu"><%= link_to "Termine", :events %></div></li>
+                  <li class="<%= is_active?("recorde") %>"><div class="nav_menu"><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></div></li>
+                  <li class="<%= is_active?("arrival") %>"><div class="nav_menu"><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></div></li>
+                  <li class="<%= is_active?("contact") %>"><div class="nav_menu"><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></div></li>
+                  <li class="<%= is_active?("about") %>"><div class="nav_menu"><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></div></li>
                 </ul>
               </div>
             </div>

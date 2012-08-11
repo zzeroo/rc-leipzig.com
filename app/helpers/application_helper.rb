@@ -14,4 +14,10 @@ module ApplicationHelper
     end
     link_to_function(name, h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
   end
+
+  # Page Menu yellow background on active pages
+  def is_active?(page_name)
+    "active" if params[:controller] == page_name #|| params[:action] == page_name
+  end
+
 end

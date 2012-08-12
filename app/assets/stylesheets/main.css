@@ -31,7 +31,10 @@ body > header { min-width: 760px; height: 100px; }
 
 body { background: #ddd; }
 
-header, footer { 
+a  { color: #9C7A1A; }
+a:hover  { background-color: ##9C7A1A; }
+
+header{ 
   background: transparent; 
   color: #333;
 }
@@ -88,3 +91,8 @@ header h1 span {
   top: 0px;
   border: none;
 }
+
+table.bordertable tr:first-child { background: #aaa; }
+table.bordertable tr:first-child a { color: #000; }
+table.bordertable tr.description { background: #e9b31c; }
+

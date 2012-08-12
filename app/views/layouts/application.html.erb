@@ -35,7 +35,7 @@
           <% end %>  
         </div> 
 
-        <h1><span>RC-Leipzig.com</span></h1>
+        <%= link_to render(:inline => '<h1><span>RC-Leipzig.com</span></h1>'), root_path %>
       </div>
     </div>
     </header>
@@ -56,14 +56,17 @@
                     <li class="<%= is_active?("index") %>"><div class="nav_menu"><%= link_to "Start", :root %></div></li>
                     <li class="<%= is_active?("course") %>"><div class="nav_menu"><%= link_to "Strecke", url_for(:controller => :home, :action => :course) %></div></li>
                     <li class="<%= is_active?("events") %>"><div class="nav_menu"><%= link_to "Termine", :events %></div></li>
-                    <li class="<%= is_active?("recorde") %>"><div class="nav_menu"><%= link_to "Recorde", url_for(:controller => :home, :action => :recorde) %></div></li>
                     <li class="<%= is_active?("arrival") %>"><div class="nav_menu"><%= link_to "Anreise", url_for(:controller => :home, :action => :arrival) %></div></li>
                     <li class="<%= is_active?("contact") %>"><div class="nav_menu"><%= link_to "Kontakt", url_for(:controller => :home, :action => :contact) %></div></li>
                     <li class="<%= is_active?("about") %>"><div class="nav_menu"><%= link_to "Über uns", url_for(:controller => :home, :action => :about) %></div></li>
                   </ul>
                 </div>
-                <div class="ym-gr">
-                  <p><a href="https://www.facebook.com/#!/profile.php?id=100003102578130&sk=wall" target="_blank"><img src="/assets/Facebook-find-uns.jpg" width="200" height="61" border="0"></a></p>
+                <div>
+                  <p style="text-align: right"><a href="https://www.facebook.com/#!/profile.php?id=100003102578130&sk=wall" target="_blank"><img src="/assets/Facebook-find-uns.jpg" width="200" height="61" border="0"></a></p>
+                  <p style="text-align: right"><a href="http://www.modellbaul&#228;dchen.de/modellbau/" target="_blank"><img src="/assets/Banner-Thomas4_2.jpg" width="205" height="83" border="0"></a></p>
+                  <p style="text-align: right"><a href="http://www.bemme51.de" target="_blank"><img src="/assets/Logo3-www.gif" width="203" height="87" border="0"></a></p>
+                  <p style="text-align: right"><a href="http://www.modell-hobby-spiel.de/"><img src="/assets/0.gif" width="100" height="47" border="0"></a></p>
+                  <p style="text-align: right"><a href="http://www.rcweb.de/forum/viewforum.php?f=195" target="_blank"><img src="/assets/rcweb_logo.gif" width="250" height="94" border="0"></a></p>
                 </div>
               </div>
             </div>
@@ -75,6 +78,20 @@
     <footer role="contentinfo">
     <div class="ym-wrapper">
       <div class="ym-wbox">
+        <div class="ym-grid">
+          <div class="ym-g66 ym-gl">
+            <div class="ym-gbox">
+              <p>&copy; 2012 Racing Center Leipzig</p>
+            </div>
+          </div>
+          <div class="ym-33 ym-gr">
+            <div class="ym-gbox">
+              <div class="ym-gbox-right">
+                <p>Layout based on <a href="http://www.yaml.de">YAML</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     </footer>

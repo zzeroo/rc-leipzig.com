@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   require 'net/ftp'
 
-  attr_accessible :description, :enddate, :startdate, :title,
+  attr_accessible :description, :enddate, :startdate, :title, :location,
     :file_uploads_attributes
 
   has_many :subscribers, :dependent => :destroy

@@ -1,25 +1,26 @@
-<strong><p class="Stil1"><font face="Arial, Helvetica, sans-serif">Termine</font></p></strong>
-<p><strong><font size="4" face="Arial, Helvetica, sans-serif">An Rennwochenenden ist Samstags die Strecke f&uuml;r freies Training ge&ouml;ffnet. </font></strong></p>
+<h1>Termine</h1>
 
-<table class="bordertable">
+<table class="bordertable" id="events">
   <tr>
-    <th><%= sortable "von:", :startdate %></th>
-    <th><%= sortable "bis:", :enddate %></th>
+    <th><%= sortable "Datum", :startdate %></th>
     <th><%= sortable "Event", :title %></th>
-    <th><%= sortable "Beschreibung", :desc %></th>
-    <th><b>Nennliste</b></th>
+    <th><%= sortable "Ort", :location %></th>
   </tr>
 
   <% @events.each do |event| %>
-    <tr>
+    <tr class="clickable">
       <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
-      <td><%= event.enddate.strftime('%d.%m.%Y') unless event.enddate.nil? %></td>
       <td><%= link_to event.title, event %></td>
-      <td><%= event.description %></td>
-      <td><center><%= link_to event.subscribers.size, event_subscribers_path(event) %></center></td>
-      <%- if current_user.try(:admin?) %><td><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %></td><%- end %>
-      <%- if current_user.try(:admin?) %><td><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %></td><%- end %>
-      <td><b><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %></b></td>
+      <td><%= event.location %></td>
+    </tr>
+    <tr style="display:none" class="description">
+      <td colspan="3">
+        <div><%= event.description %></div>
+        <div><%- if current_user.try(:admin?) %><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %><%- end %>
+          <%- if current_user.try(:admin?) %><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %><%- end %>
+          <b><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %></b>
+        </div>
+      </td>
     </tr>
   <% end %>
 </table>

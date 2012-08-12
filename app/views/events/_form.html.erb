@@ -21,11 +21,11 @@
   </div>
   <div class="ym-fbox-text">
   <%= f.label "Von" %><br />
-  <%= f.date_select :startdate %>
+  <%= f.text_field :startdate, :class => 'picker' %>
   </div>
   <div class="ym-fbox-text">
   <%= f.label "Bis" %><br />
-  <%= f.date_select :enddate %>
+  <%= f.text_field :enddate, :class => 'picker' %>
   </div>
   <div class="ym-fbox-select">
   <%= f.label "Beschreibung" %><br />

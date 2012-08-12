@@ -1,45 +1,56 @@
 <%= form_for(@event, :class => "ym-form linearize-form ym-columnar") do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation" class="box error">
-    <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
+      <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
 
-    <ul>
-    <% @event.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
-  <div class="ym-fbox-text">
-  <%= f.label "Titel" %><br />
-  <%= f.text_field :title %>
-  </div>
-  <div class="ym-fbox-text">
-  <%= f.label "Ort der Veranstaltung" %><br />
-  <%= f.text_field :location %>
-  </div>
-  <div class="ym-fbox-text">
-  <%= f.label "Von" %><br />
-  <%= f.text_field :startdate, :class => 'datepicker' %>
-  </div>
-  <div class="ym-fbox-text">
-  <%= f.label "Bis" %><br />
-  <%= f.text_field :enddate, :class => 'datepicker' %>
-  </div>
-  <div class="ym-fbox-select">
-  <%= f.label "Beschreibung" %><br />
-  <%= f.text_area :description, :rows => 5 %>
-  </div>
-  <div>
-  <%= f.fields_for :file_uploads do |builder| %>
-    <div>
-    <%= builder.text_field :title %><br />
-    <%= builder.file_field :file %><br />
-    <%= builder.check_box :_destroy %><br />
-    <%= builder.text_area :description, :rows => 3 %>
+  <div class="ym-grid">
+    <div class="ym-g50 ym-gl">
+      <div class="ym-gbox">
+        <div class="ym-fbox-text">
+          <%= f.label "Titel" %><br />
+          <%= f.text_field :title %>
+        </div>
+        <div class="ym-fbox-text">
+          <%= f.label "Ort der Veranstaltung" %><br />
+          <%= f.text_field :location %>
+        </div>
+        <div class="ym-fbox-text">
+          <%= f.label "Von" %><br />
+          <%= f.text_field :startdate, :class => 'datepicker' %>
+        </div>
+        <div class="ym-fbox-text">
+          <%= f.label "Bis" %><br />
+          <%= f.text_field :enddate, :class => 'datepicker' %>
+        </div>
+        <div class="ym-fbox-select">
+          <%= f.label "Beschreibung" %><br />
+          <%= f.text_area :description, :rows => 5 %>
+        </div>
+      </div>
     </div>
-  <% end %>
+    <div class="ym-g50 ym-gr">
+      <div class="ym-gbox">
+        <div>Dateiuploads:</div>
+        <div>
+          <%= f.fields_for :file_uploads do |builder| %>
+            <div>
+              <%= builder.text_field :title %><br />
+              <%= builder.file_field :file %><br />
+              <%= builder.check_box :_destroy %><br />
+              <%= builder.text_area :description, :rows => 3 %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="ym-fbox-button">
     <%= f.submit "Termin speichern", :class => "ym-button ym-add" %>

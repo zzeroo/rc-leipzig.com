@@ -10,6 +10,11 @@
  *
  *= require_self
  *= require yaml/core/base
+ *= require yaml/navigation/hlist
+ *= require yaml/forms/gray-theme
+ *= require yaml/screen/typography
+ *= require yaml/screen/screen-FULLPAGE-layout
+ *= require yaml/print/print
  *= require main
  *= require smoothness/jquery-ui-1.8.22.custom
  *= require dataTables/jquery.dataTables
@@ -18,15 +23,3 @@
 /* Google Font API */
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700);
 
-/* import core styles | Basis-Stylesheets einbinden 
-@import url(yaml/core/base.css); */
-
-/* import screen layout | Screen-Layout einbinden */
-@import url(yaml/navigation/hlist.css);
-@import url(yaml/forms/gray-theme.css);
-
-@import url(yaml/screen/typography.css);
-@import url(yaml/screen/screen-FULLPAGE-layout.css);
-
-/* import print layout | Druck-Layout einbinden */
-@import url(yaml/print/print.css);

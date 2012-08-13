@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require main
  *= require smoothness/jquery-ui-1.8.22.custom
  *= require dataTables/jquery.dataTables
  * require_tree .
@@ -28,5 +29,3 @@
 
 /* import print layout | Druck-Layout einbinden */
 @import url(yaml/print/print.css);
-
-@import url(main.css);

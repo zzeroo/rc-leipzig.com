@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require yaml/core/base
  *= require main
  *= require smoothness/jquery-ui-1.8.22.custom
  *= require dataTables/jquery.dataTables
@@ -17,8 +18,8 @@
 /* Google Font API */
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700);
 
-/* import core styles | Basis-Stylesheets einbinden */
-@import url(yaml/core/base.css);
+/* import core styles | Basis-Stylesheets einbinden 
+@import url(yaml/core/base.css); */
 
 /* import screen layout | Screen-Layout einbinden */
 @import url(yaml/navigation/hlist.css);

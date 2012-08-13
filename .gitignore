@@ -6,6 +6,7 @@
 *.xcf
 
 PASSWORTE
+config/database.yml
 
 
 # Ignore bundler config

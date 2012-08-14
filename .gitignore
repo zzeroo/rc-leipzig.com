@@ -8,6 +8,10 @@
 PASSWORTE
 config/database.yml
 
+# heroku db:push stuff
+push_*
+
+.rvmrc
 
 # Ignore bundler config
 /.bundle

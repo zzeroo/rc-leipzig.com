@@ -43,6 +43,8 @@ https://devcenter.heroku.com/articles/multiple-environments
 
 Kaminari
 ===
+Kaminari dient als Paginator für die Subscriber.
+
 Installation
 ---
 Add this line to Your Gemfile and run `bundle install`

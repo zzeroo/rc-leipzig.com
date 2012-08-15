@@ -23,7 +23,7 @@
   <body>
     <header>
     <div class="ym-wrapper">
-      <div class="ym-wbox">
+      <div class="ym-cbox">
         <div id="user_nav" class="ym-gr">  
           <% if user_signed_in? %>  
             <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?<br /> 
@@ -36,6 +36,7 @@
         </div> 
 
         <%= link_to render(:inline => '<h1><span>RC-Leipzig.com</span></h1>'), root_path %>
+
       </div>
     </div>
     </header>

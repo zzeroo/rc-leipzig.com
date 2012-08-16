@@ -27,7 +27,8 @@
         <div id="user_nav" class="ym-gr">  
           <% if user_signed_in? %>  
             <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?<br /> 
-            <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>  </p>
+            <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>| 
+            <%= link_to "Benutzerprofil", edit_user_registration_path(current_user) %>  </p>
             <%- if current_user.try(:admin) %><%= link_to "Benutzerverwaltung", users_path %></p><%- end %>
           <% else %>  
             <%= link_to "Registieren", new_user_registration_path %> or  

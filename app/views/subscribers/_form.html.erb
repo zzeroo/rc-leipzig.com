@@ -21,7 +21,7 @@
   </div>
   <div class="ym-fbox-text">
     <%= f.label "Email" %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :value => current_user.email, :readonly => true %>
   </div>
   <div class="ym-fbox-text">
     <%= f.label "Klasse" %><br />

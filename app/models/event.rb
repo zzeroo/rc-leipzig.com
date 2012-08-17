@@ -9,6 +9,8 @@ class Event < ActiveRecord::Base
   accepts_nested_attributes_for :file_uploads, :allow_destroy => true
 
   validates :title, :presence => true
+  validates :startdate, :presence => true
+  validates :enddate, :presence => true
 
 
 end

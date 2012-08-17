@@ -5,11 +5,11 @@
 
     <h2>Entsperr-Informationen erneut versenden</h2>
 
-    <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => "ym-form linearize-form      ym-columnar" }) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="ym-fbox-text">
-        <%= f.label :email %><br />
+        <%= f.label :email %>
         <%= f.email_field :email %></div>
 
       <div><%= f.submit "Entsperr-Info erneut senden", :class => "ym-button ym-add" %></div>

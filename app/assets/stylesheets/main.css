@@ -73,6 +73,13 @@ header h1 span {
 #sitenavi li div.nav_menu { 
 }
 
+/* Links zum Benutzerprofil und Login/ Logout
+ * etwas zur Seite geschoben da sonnst immer durch das BETA Logo  verdeckt. */
+#user_nav {
+  margin-right: 2em;
+}
+
+
 #contentdiv { 
   padding-top: 35px;
   overflow: hidden; 

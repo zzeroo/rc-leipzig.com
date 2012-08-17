@@ -1,10 +1,10 @@
 
 
 
+Techisches
+===
 
 Konfiguration der Anwendung
-===
-Techisches
 ---
 Ich habe das Rails-Config gem verwendet https://github.com/railsjedi/rails_config
 
@@ -31,6 +31,14 @@ stehen keine Klartext Passworte, hier sind lediglich Einträge wie diese
 Die ENV[''] Einträge werden durch die Umgebungsvariablen des Development
 Rechners ersetzt (heroku config:add FTP_SERVER=rc-leipzig.com). 
 Siehe dazu auch den Heroku Abschnitt dieser README.
+
+
+Dateiupload
+===
+
+Links zum Dateiupload
+---
+http://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
 
 
 Heroku

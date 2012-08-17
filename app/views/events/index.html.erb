@@ -10,15 +10,16 @@
   <% @events.each do |event| %>
     <tr class="clickable">
       <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
-      <td style="font-weight: bolder;"><%= link_to event.title, event %></td>
+      <td style="font-weight: bolder;"><%= event.title %></td>
       <td><%= event.location %></td>
     </tr>
     <tr style="display:none" class="description">
       <td colspan="3">
+        <h1><%= link_to event.title, event %></h1>
         <div><%= event.description %></div>
         <div><%- if current_user.try(:admin?) %><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %><%- end %>
-          <%- if current_user.try(:admin?) %><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Are you sure?' }, :class => "ym-button ym-delete" %><%- end %>
-          <b><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %></b>
+          <%- if current_user.try(:admin?) %><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Bist du sicher?' }, :class => "ym-button ym-delete" %><%- end %>
+          <% unless event.enddate.past? -%><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %><% end -%>
         </div>
       </td>
     </tr>

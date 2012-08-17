@@ -24,7 +24,7 @@ events = Event.create([
 
 puts "Creating users ..."
 users = User.create([
-  { :username => "zzeroo", :email  => "test@test.com", :password => "rc-leipzig", :password_confirmation => "rc-leipzig" },
+  { :username => "zzeroo", :email  => "pulp@zzeroo.org", :password => "rc-leipzig", :password_confirmation => "rc-leipzig" },
   { :username => "Tom", :email => "tomgehler@gmx.de", :password => "rc-leipzig", :password_confirmation => "rc-leipzig" },
   { :username => "Katrin", :email => "info@bremme-wohnen.de", :password => "rc-leipzig", :password_confirmation => "rc-leipzig" },
   { :username => "Thomas", :email => "thomesd@web.de", :password => "rc-leipzig", :password_confirmation => "rc-leipzig" },

@@ -17,7 +17,9 @@
       <td colspan="3">
         <h1><%= link_to event.title, event %></h1>
         <div><%= event.description %></div>
-        <div><%- if current_user.try(:admin?) %><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %><%- end %>
+        <div>
+          <%= link_to 'Anzeigen', event_path(event), :class => "ym-button ym-play" %>
+          <%- if current_user.try(:admin?) %><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %><%- end %>
           <%- if current_user.try(:admin?) %><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Bist du sicher?' }, :class => "ym-button ym-delete" %><%- end %>
           <% unless event.enddate.past? -%><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %><% end -%>
         </div>

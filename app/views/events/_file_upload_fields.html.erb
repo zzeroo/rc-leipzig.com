@@ -1,0 +1,12 @@
+<div class="ym-fbox-file">
+  <%= f.file_field :file %>
+</div>
+<div class="ym-fbox-select">
+  <%= f.label "Anhang löschen?" %>
+  <%= f.check_box :_destroy %>
+</div>
+<div class="ym-fbox-text">
+  <%= f.label "Beschreibung" %>
+  <%= f.text_area :description, :rows => 3 %>
+</div>
+

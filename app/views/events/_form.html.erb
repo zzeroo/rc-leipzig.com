@@ -40,16 +40,7 @@
       <div class="ym-gbox">
         <div>
           <%= f.fields_for :file_uploads do |builder| %>
-            <div>
-              <%= builder.file_field :file %>
-            </div>
-            <div>
-              <%= builder.check_box :_destroy %>
-            </div>
-            <div>
-              <%= builder.label "Beschreibung" %>
-              <%= builder.text_area :description, :rows => 3 %>
-            </div>
+            <%= render 'file_upload_fields', :f => builder %>
           <% end %>
         </div>
       </div>

@@ -1,41 +1,37 @@
-<div id="main">
-  <div class="ym-wrapper">
-    <section class="box info"><div class="ym-grid linearize-level-1">
-      <%= image_tag "race-flags-small.png" %>
-    </div></section>
-    <section>
+<div id="main" class="ym-cbox">
+  <section class="box info"><div class="ym-grid linearize-level-1">
+    <%= image_tag "race-flags-small.png" %>
+  </div></section>
+  <section>
 
-    <article class="content">
+  <article class="content">
 
-    <p>
-    <b>Vorname:</b>
-    <%= @subscriber.firstname %>
-    </p>
+  <p>
+  <b>Vorname:</b>
+  <%= @subscriber.firstname %>
+  </p>
 
-    <p>
-    <b>Nachname:</b>
-    <%= @subscriber.lastname %>
-    </p>
+  <p>
+  <b>Nachname:</b>
+  <%= @subscriber.lastname %>
+  </p>
 
-    <p>
-    <b>Email:</b>
-    <%= @subscriber.email %>
-    </p>
+  <p>
+  <b>Email:</b>
+  <%= @subscriber.email %>
+  </p>
 
-    <p>
+  <p>
 
-    <p>
-    <b>Klasse:</b>
-    <%= @subscriber.grade %>
-    </p>
+  <p>
+  <b>Klasse:</b>
+  <%= @subscriber.grade %>
+  </p>
 
-    <p>
-    <%= link_to 'Bearbeiten', edit_event_subscriber_path(@event), :class => "ym-button ym-add" %>
-    <%= link_to 'Zurück zur Übersicht', event_subscribers_path(@event), :class => "ym-button" %>
-    </p>
+  <p>
+  <%= link_to 'Bearbeiten', edit_event_subscriber_path(@event), :class => "ym-button ym-add" %>
+  <%= link_to 'Zurück zur Übersicht', event_subscribers_path(@event), :class => "ym-button" %>
+  </p>
 
-    </article>
-    </section>
-  </div>
+  </article>
 </div>
-

@@ -1,33 +1,33 @@
-<h1>Termine</h1>
+<div id="main" class="ym-cbox">
 
-<table class="bordertable" id="events">
-  <tr>
-    <th><%= sortable "Datum", :startdate %></th>
-    <th><%= sortable "Event", :title %></th>
-    <th><%= sortable "Ort", :location %></th>
-  </tr>
+  <h1>Termine</h1>
 
-  <% @events.each do |event| %>
-    <tr class="clickable">
-      <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
-      <td style="font-weight: bolder;"><%= event.title %></td>
-      <td><%= event.location %></td>
+  <table class="bordertable" id="events">
+    <tr>
+      <th><%= sortable "Datum", :startdate %></th>
+      <th><%= sortable "Event", :title %></th>
+      <th><%= sortable "Ort", :location %></th>
     </tr>
-    <tr style="display:none" class="description">
-      <td colspan="3">
-        <h1><%= link_to event.title, event %></h1>
-        <div><%= event.description %></div>
-        <div>
-          <%= link_to 'Anzeigen', event_path(event), :class => "ym-button ym-play" %>
-          <%- if current_user.try(:admin?) %><%= link_to 'Bearbeiten', edit_event_path(event), :class => "ym-button ym-edit" %><%- end %>
-          <%- if current_user.try(:admin?) %><%= link_to 'Löschen', event, method: :delete, data: { confirm: 'Bist du sicher?' }, :class => "ym-button ym-delete" %><%- end %>
-          <% unless event.enddate.past? -%><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(event), :class => "ym-button" %><% end -%>
-        </div>
-      </td>
-    </tr>
-  <% end %>
-</table>
 
-<br />
+    <% @events.each do |event| %>
+      <tr class="clickable">
+        <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
+        <td style="font-weight: bolder;"><%= event.title %></td>
+        <td><%= event.location %></td>
+      </tr>
+      <tr style="display:none" class="description">
+        <td colspan="3">
+          <%= render :partial => 'user_show', :locals => { :event => event} %>
+          <div>
+            <%= render :partial => 'links', :locals => { :event => event } %>
+            <%= link_to 'Anzeigen', event_path(event), :class => "ym-button ym-play" %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 
-<%- if current_user.try(:admin?) %><p><%= link_to 'Neuer Termin', new_event_path, :class => "ym-button ym-add" %></p><%- end %>
+  <br />
+
+  <%- if current_user.try(:admin?) %><p><%= link_to 'Neuer Termin', new_event_path, :class => "ym-button ym-add" %></p><%- end %>
+</div>

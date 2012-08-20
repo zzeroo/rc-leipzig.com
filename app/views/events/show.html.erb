@@ -1,4 +1,4 @@
-<div id="main">
+<div id="main" class="ym-cbox">
   <div class="ym-wrapper">
     <section class="box info"><div class="ym-grid linearize-level-1">
       <%= image_tag "race-flags-small.png" %>
@@ -10,10 +10,13 @@
     <h1><%= @event.title %></h1>
     <h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
 
+    <% unless @event.description.nil? -%>
     <div><b>Beschreibung:</b><br />
       <%= @event.description %>
     </div>
+    <% end -%>
 
+    <% unless @event.file_uploads.empty? -%>
     <div><b>Anhänge</b><br />
       <% @event.file_uploads.each do |file_upload| -%>
         <div><%= file_upload.title %></div>
@@ -21,11 +24,11 @@
         <div><%= file_upload.description %></div>
       <% end -%>
     </div>
-
-    <div><b><%= link_to 'Nennliste anzeigen', event_subscribers_path(@event, @subscribers), :class => "ym-button ym-play" %></b></div>
+    <% end -%>
 
 
     <div>
+      <% unless @event.enddate.past? -%><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(@event), :class => "ym-button" %><% end -%>
       <%- if current_user.try(:admin) %><%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %><%- end %>
       <%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
     </div>

@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 
   has_many :subscribers, :dependent => :destroy
   has_many :file_uploads, :as => :uploadable, :dependent => :destroy
-  accepts_nested_attributes_for :file_uploads, :allow_destroy => true
+  accepts_nested_attributes_for :file_uploads, :allow_destroy => true, :reject_if => lambda { |a| a[:file].blank? }
 
   validates :title, :presence => true
   validates :startdate, :presence => true

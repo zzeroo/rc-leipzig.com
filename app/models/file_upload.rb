@@ -7,10 +7,10 @@ class FileUpload < ActiveRecord::Base
 
   
 
-  before_save :hitme
+  before_save :upload
 
 
-  def hitme
+  def upload
     # MODEL_LOG.debug self.file.original_filename
     self.file = self.file.original_filename
   end

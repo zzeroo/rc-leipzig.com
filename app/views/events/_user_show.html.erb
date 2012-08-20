@@ -1,0 +1,11 @@
+<h1><%= link_to event.title, event %></h1>
+<p><%= event.description %></p>
+<% unless event.file_uploads.empty? %>
+  <p>Anh&auml;nge:
+  <ul>
+    <% event.file_uploads.each do |upload| %>
+      <li><%= link_to upload.file, upload.path %></li>
+    <% end %>
+  </ul>
+  </p>
+<% end %>

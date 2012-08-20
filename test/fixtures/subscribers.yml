@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  firstname: MyString
-  lastname: MyString
-  email: MyString
-  event_id: 1
-  grade: MyString
+  firstname: One
+  lastname: Test
+  email: one@test.com
+  event: one
+  grade: Rookey
 
 two:
-  firstname: MyString
-  lastname: MyString
-  email: MyString
-  event_id: 1
-  grade: MyString
+  firstname: Two
+  lastname: Test
+  email: two@test.com
+  event: two
+  grade: Rookey

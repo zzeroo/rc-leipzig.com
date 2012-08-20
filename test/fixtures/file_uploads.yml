@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
+  id: 1
+  title: FirstFileTitle
+  description: FirstFile
   path: MyString
-  filename: MyString
-  uploadable_id: 1
-  uploadable_type: MyString
+  file: MyString
+  uploadable: Event(:one)
 
 two:
-  title: MyString
+  id: 2
+  title: SecondFileTitle
   description: MyText
   path: MyString
-  filename: MyString
-  uploadable_id: 1
-  uploadable_type: MyString
+  file: MyString
+  uploadable: Event(:one)

@@ -3,6 +3,7 @@ require 'test_helper'
 class EventsControllerTest < ActionController::TestCase
   setup do
     @event = events(:one)
+    sign_in :user, users(:normaluser)
   end
 
   test "should get index" do
@@ -18,7 +19,7 @@ class EventsControllerTest < ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: { description: @event.description, enddate: @event.enddate, startdate: @event.startdate, title: @event.title }
+      post :create, event: { description: @event.description, enddate: @event.enddate, startdate: @event.startdate, title: @event.title, location: @event.location }
     end
 
     assert_redirected_to event_path(assigns(:event))
@@ -46,16 +47,4 @@ class EventsControllerTest < ActionController::TestCase
 
     assert_redirected_to events_path
   end
-
-# eigene  
-  
-  test "should create event with file attachment" do
-    assert_difference('Event.count') do
-      @event = events(:file)
-      post :create, event: { description: @event.description, enddate: @event.enddate, startdate: @event.startdate, title: @event.title }
-    end
-
-    assert_redirected_to event_path(assigns(:event))
-  end
-
 end

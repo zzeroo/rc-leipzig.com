@@ -1,38 +1,29 @@
+<div id="main" class="ym-cbox">
 
-<div id="main">
-  <div class="ym-wrapper">
-    <section class="box info"><div class="ym-grid linearize-level-1"><%= image_tag "race-flags-small.png" %></div></section>
-    <section class="ym-grid linearize-level-1">
-    <article class="ym-g99 ym-gl content">
+  <h1>Benutzer</h1>
 
-    <h1>Benutzer</h1>
-
-    <table class="bordertable">
-      <thead>
+  <table class="bordertable">
+    <thead>
+      <tr>
+        <th>Benutzername</td>
+        <th>Email Adresse</td>
+        <th>erstellt</td>
+        <th>letzter Login</td>
+        <th>Admin?</td>
+      </tr>
+    </thead>
+    <% @users.each do |user| %>
+      <tbody>
         <tr>
-          <th>Benutzername</td>
-          <th>Email Adresse</td>
-          <th>erstellt</td>
-          <th>letzter Login</td>
-          <th>Admin?</td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at %></td>
+          <td><%= user.last_sign_in_at %></td>
+          <td><%= user.admin %></td>
         </tr>
-      </thead>
-      <% @users.each do |user| %>
-        <tbody>
-          <tr>
-            <td><%= user.username %></td>
-            <td><%= user.email %></td>
-            <td><%= user.created_at %></td>
-            <td><%= user.last_sign_in_at %></td>
-            <td><%= user.admin %></td>
-          </tr>
-        </tbody>
-      <% end %>
-    </table>
+      </tbody>
+    <% end %>
+  </table>
 
-    <div><%= link_to "Neuen Benutzer anlegen", new_user_path, :class => "ym-button" %></div>
-    </article>
-    </section>
-  </div>
+  <div><%= link_to "Neuen Benutzer anlegen", new_user_path, :class => "ym-button" %></div>
 </div>
-

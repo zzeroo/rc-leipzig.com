@@ -2,7 +2,7 @@
 
     <h2>Anmeldung</h2>
 
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "ym-form linearize-form ym-columnar"}) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :class => "ym-form linearize-form"}) do |f| %>
       <div class="ym-fbox-text">
         <%= f.label :login %>
         <%= f.text_field :login %></div>

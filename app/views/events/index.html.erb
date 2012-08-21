@@ -1,6 +1,17 @@
 <div id="main" class="ym-cbox">
 
-  <h1>Termine</h1>
+  <h1>&Uuml;bersicht Termine</h1>
+
+  <div class="box info">
+    Duch ein Klick auf die Beschriftung (<b>Datum, Event oder Ort</b>), im Tabellenkopf
+    k&ouml;nnen die Spalten jeweils sortiert werden. Ein weiterer Klick auf den
+    Namen sortiert dann in die andere Richtung.
+  </div>
+  
+  <div class="box warning">
+    Weitere Informationen und der Eintrag in die <b>Nennliste</b> k&ouml;nnen
+    durch ein Klick auf den jeweiligen Termin erreicht werden.
+  </div>
 
   <table class="bordertable" id="events">
     <tr>
@@ -12,7 +23,7 @@
     <% @events.each do |event| %>
       <tr class="clickable">
         <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
-        <td style="font-weight: bolder;"><%= event.title %></td>
+        <td style="font-weight: bolder;" class="event-title"><%= event.title %></td>
         <td><%= event.location %></td>
       </tr>
       <tr style="display:none" class="description">

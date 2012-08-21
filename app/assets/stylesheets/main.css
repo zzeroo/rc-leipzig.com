@@ -103,3 +103,10 @@ table.bordertable tr:first-child { background: #aaa; }
 table.bordertable tr:first-child a { color: #000; }
 table.bordertable tr.description { background: #e9b31c; }
 
+
+.zz-info-small {
+  font-family: "Droid Sans Mono" "Monaco" "Verdana" sans-serif;
+  font-weight: normal;
+  font-size: 10px;
+  color: #777;
+}

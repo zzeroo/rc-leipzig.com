@@ -1,8 +1,19 @@
+Highlights
+===
+Ich versuche hier einige der "Highlights" der neuen Seite fest zu halten.
+Die Liste der Funktionen ist nicht vollständig und wird ständig erweitert.
+Sollten einige hier genannten Sachen nicht funktionieren schickt mir bitte ein
+Nachricht über Github oder an <rc-leipzig-com at zzeroo.org>.
 
+- Klick auf den Beta Button, oben rechts auf jeder Seite, führt zu einer Liste der Änderungen die an der Webseite vorgenommen wurden
 
 
 Techisches
 ===
+Die Webseite ist mit den *Ruby on Rails* Webframework erstellt. 
+
+Gehosted wird die Site im *Heroku* Cloud Service.
+
 
 Konfiguration der Anwendung
 ---

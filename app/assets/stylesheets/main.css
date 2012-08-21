@@ -104,9 +104,15 @@ table.bordertable tr:first-child a { color: #000; }
 table.bordertable tr.description { background: #e9b31c; }
 
 
-.zz-info-small {
+.event-index-info-small {
+  background-color: #fff;
+  position: relative; 
+  padding: 0.5em;
+  border: 1px solid #999;
   font-family: "Droid Sans Mono" "Monaco" "Verdana" sans-serif;
   font-weight: normal;
   font-size: 10px;
   color: #777;
 }
+
+#event-over { color: #bbb; }

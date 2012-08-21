@@ -9,7 +9,7 @@ $ ->
 
 $ ->
   $(".clickable").hover \ 
-    -> $(this).find('td.event-title').append('<p id="event-info" class="float-right zz-info-small">F&uuml;r weitere Infos<br />bitte in die Spalte klicken</p>')
+    -> $(this).find('td.event-title').append('<p id="event-info" class="float-right event-index-info-small">F&uuml;r weitere Infos<br />bitte in die Spalte klicken</p>')
     ,    
-    -> $(this).find('td.event-title').find('#event-info').empty()
+    -> $(this).find('td.event-title').find('#event-info').remove()
 

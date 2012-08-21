@@ -21,7 +21,7 @@
     </tr>
 
     <% @events.each do |event| %>
-      <tr class="clickable">
+      <tr class="clickable" <% if event.enddate.past? -%>id="event-over"<% end -%>>
         <td><%= event.startdate.strftime('%d.%m.%Y') unless event.startdate.nil? %></td>
         <td style="font-weight: bolder;" class="event-title"><%= event.title %></td>
         <td><%= event.location %></td>

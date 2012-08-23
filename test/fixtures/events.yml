@@ -7,10 +7,25 @@ one:
   description: "Erstes Rennen"
   location: "Racing Center Leipzig"
 
+# von diesem Event hängt der substribers(:two) ab!
 two:
   startdate: 2012-07-10
   enddate: 2012-07-10
   title: "Rennen Two"
   description: "Zweites Rennen"
+  location: "Racing Center Leipzig"
+
+future:
+  startdate: <%= 13.days.from_now.to_s(:db) %>
+  enddate: <%= 14.days.from_now.to_s(:db) %>
+  title: "Rennen in der Zukunft"
+  description: "Rennen ohne Titlel"
+  location: "Racing Center Leipzig"
+
+past:
+  startdate: <%= 14.days.ago.to_s(:db) %>
+  enddate: <%= 13.days.ago.to_s(:db) %>
+  title: "Rennen der Vergangnenheit"
+  description: "Rennen ohne Titlel"
   location: "Racing Center Leipzig"
 

@@ -201,3 +201,13 @@ de:
   activerecord:
     errors:
       <<: *errors
+  
+  unauthorized:
+    manage:
+      all: "Die Aktion '%{action}' auf die Resource '%{subject}' wird verweigert. Evtl. reichen die Zugriffsrechte nicht aus."
+    create:
+      event: "Zugriff verweigert! Deine Benutzerrechte reichen nicht aus einen Termin zu erstellen."
+    update:
+      event: "Zugriff verweigert! Deine Benutzerrechte reichen nicht aus diesen Termin zu bearbeiten." 
+    destroy:
+      event: "Zugriff verweigert! Deine Benutzerrechte reichen nicht aus diesen Termin zu löschen." 

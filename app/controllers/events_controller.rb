@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   
   helper_method :sort_column, :sort_direction
   
+  load_and_authorize_resource
+  skip_authorize_resource :only => [ :index, :show ]
+
   # GET /events
   # GET /events.json
   def index

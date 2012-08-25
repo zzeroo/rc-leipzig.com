@@ -29,7 +29,12 @@ end
 gem 'jquery-rails'
 # Pagination
 gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
+
+# Authentication and rights managment
 gem 'devise'
+gem 'cancan'
+
+# File upload
 gem "rails_config"
 
 # Better webserver? (20:13 07.08.2012)

@@ -1,4 +1,10 @@
+12:23 26.08.2012
+  - Events#index -> Titel mit link versehen, so dass ohne JS die Events angezeigt werden können.
+---
+
+
 - Remove the catch-all route in config/routes.rb
+
 - Attachments für die Events hinzufügen (Ausschreibungen, Ergebnisse)
 
 - Email konfigurieren

@@ -6,8 +6,15 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'taps'
+  gem 'rspec'
+  gem 'rspec-rails'
+ 
+  group :autotest do 
+    gem 'ZenTest'
+    gem 'autotest'
+    gem 'autotest-rails'
+  end
 end
 
 gem 'pg'

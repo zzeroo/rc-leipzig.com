@@ -1,0 +1,23 @@
+<% if defined?(event) then @event = event end -%>
+
+<h1><%= @event.title %></h1>
+<h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
+
+<% unless @event.description.blank? %>
+  <div><b>Beschreibung:</b><br />
+    <%= @event.description %>
+  </div>
+<% else -%>
+  <div>Zur Zeit keine weiteren Infos zu diesem Termin vorhanden!</div>
+<% end -%>
+
+<% unless @event.file_uploads.empty? -%>
+  <div><b>Anhänge</b><br />
+    <% @event.file_uploads.each do |file_upload| -%>
+      <div><%= file_upload.title %></div>
+      <div><%= link_to file_upload.file, file_upload.path %></div>
+      <div><%= file_upload.description %></div>
+    <% end -%>
+  </div>
+<% end -%>
+

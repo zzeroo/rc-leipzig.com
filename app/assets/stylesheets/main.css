@@ -117,5 +117,6 @@ table.bordertable tr:first-child a { color: #000; }
 #color-event-over { color: #888; }
 
 .event-show {}
-.event-show h2 { font-size: 2em; margin-top: 0; margin-bottom: 2em; }
+.event-show h2,
+.event-index h2 { font-size: 2em; margin-top: 0; margin-bottom: 2em; }
 

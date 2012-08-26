@@ -28,11 +28,13 @@
       </tr>
       <tr style="display:none" class="description">
         <td colspan="3">
-          <%= render :partial => 'user_show', :locals => { :event => event} %>
+        <article class="event-index">
+          <%= render :partial => 'event-show', :locals => { :event => event} %>
           <div>
             <%= render :partial => 'links', :locals => { :event => event } %>
             <%= link_to 'Anzeigen', event_path(event), :class => "ym-button ym-play" %>
           </div>
+        </article>
         </td>
       </tr>
     <% end %>

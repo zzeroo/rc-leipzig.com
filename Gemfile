@@ -8,6 +8,9 @@ gem 'rails', '3.2.6'
 group :development, :test do
   gem 'sqlite3'
   gem 'taps'
+  gem 'autotest-rails'
+  gem 'term-ansicolor'
+  gem 'turn'
 end
 
 gem 'pg'

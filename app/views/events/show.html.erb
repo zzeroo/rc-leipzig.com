@@ -5,25 +5,27 @@
       Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%- if current_user %><%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %><%- end %>
     </div></section>
     <section>
-    <article class="content">
+    <article class="event-show">
 
     <h1><%= @event.title %></h1>
     <h2><b>Von:</b>&nbsp;<%= @event.startdate %>&nbsp;<b>Bis:</b>&nbsp;<%= @event.enddate %></h2>
 
-    <% unless @event.description.nil? -%>
-    <div><b>Beschreibung:</b><br />
-      <%= @event.description %>
-    </div>
+    <% unless @event.description.empty? -%>
+      <div><b>Beschreibung:</b><br />
+        <%= @event.description %>
+      </div>
+    <% else -%>
+      <div>Hier könnte ein Standard stehen wenn keine Beschreibung angegeben wurde!</div>
     <% end -%>
 
     <% unless @event.file_uploads.empty? -%>
-    <div><b>Anhänge</b><br />
-      <% @event.file_uploads.each do |file_upload| -%>
-        <div><%= file_upload.title %></div>
-        <div><%= link_to file_upload.file, file_upload.path %></div>
-        <div><%= file_upload.description %></div>
-      <% end -%>
-    </div>
+      <div><b>Anhänge</b><br />
+        <% @event.file_uploads.each do |file_upload| -%>
+          <div><%= file_upload.title %></div>
+          <div><%= link_to file_upload.file, file_upload.path %></div>
+          <div><%= file_upload.description %></div>
+        <% end -%>
+      </div>
     <% end -%>
 
 

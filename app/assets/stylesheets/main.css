@@ -101,7 +101,6 @@ header h1 span {
 
 table.bordertable tr:first-child { background: #aaa; }
 table.bordertable tr:first-child a { color: #000; }
-table.bordertable tr.description { background: #e9b31c; }
 
 
 .event-index-info-small {
@@ -115,4 +114,8 @@ table.bordertable tr.description { background: #e9b31c; }
   color: #777;
 }
 
-#event-over { color: #bbb; }
+#color-event-over { color: #888; }
+
+.event-show {}
+.event-show h2 { font-size: 2em; margin-top: 0; margin-bottom: 2em; }
+

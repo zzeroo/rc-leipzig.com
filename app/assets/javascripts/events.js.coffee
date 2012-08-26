@@ -4,9 +4,8 @@
 $ -> 
   $(".datepicker").datepicker({ dateFormat: "yy-mm-dd", appendText: "(yyyy-mm-dd)" })
 
-#$ ->
-#  $(".clickable td:nth-child(2)").append('<p class="float-right zz-info-small">F&uuml;r weitere Infos<br />bitte in die Spalte klicken</p>')
 
+# Zeige eine kleine 
 $ ->
   $(".clickable").hover \ 
     -> $(this).find('td.event-title').append('<p id="event-info" class="float-right event-index-info-small">F&uuml;r weitere Infos<br />bitte in die Spalte klicken</p>')

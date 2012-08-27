@@ -8,9 +8,12 @@ gem 'rails', '3.2.6'
 group :development, :test do
   gem 'sqlite3'
   gem 'taps'
-  gem 'autotest-rails'
-  gem 'term-ansicolor'
   gem 'turn'
+  gem 'test-unit', '~> 2.0.0'  
+  gem 'autotest-rails'
+  gem 'ZenTest'
+  gem 'term-ansicolor'
+  gem 'ansi'
 end
 
 gem 'pg'
@@ -31,7 +34,7 @@ end
 
 gem 'jquery-rails'
 # Pagination
-gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
+gem 'kaminari' #, :git => 'https://github.com/PapePathe/kaminari.git'
 
 # Authentication and rights managment
 gem 'devise'

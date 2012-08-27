@@ -5,15 +5,6 @@ GIT
     jquery-datatables-rails (1.10.0)
       jquery-rails
 
-GIT
-  remote: https://github.com/PapePathe/kaminari.git
-  revision: fb1db33b0d327abfbbec5983837405f26357701c
-  specs:
-    kaminari (0.13.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      railties (>= 3.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,6 +70,10 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.7.3)
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
     libv8 (3.3.10.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -137,6 +132,7 @@ GEM
       sequel (~> 3.20.0)
       sinatra (~> 1.0.0)
     term-ansicolor (1.0.7)
+    test-unit (2.0.9)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
     thin (1.4.1)
@@ -161,6 +157,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ZenTest
+  ansi
   autotest-rails
   cancan
   coffee-rails (~> 3.2.1)
@@ -168,7 +166,7 @@ DEPENDENCIES
   jquery-datatables-rails!
   jquery-rails
   jquery-ui-rails
-  kaminari!
+  kaminari
   pg
   rails (= 3.2.6)
   rails_config
@@ -176,6 +174,7 @@ DEPENDENCIES
   sqlite3
   taps
   term-ansicolor
+  test-unit (~> 2.0.0)
   therubyracer
   thin
   turn

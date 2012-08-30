@@ -34,4 +34,8 @@ RcLeipzigCom::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+
+  # Disable deprecation logging on testing
+  ActiveSupport::Deprecation.silenced = true
 end

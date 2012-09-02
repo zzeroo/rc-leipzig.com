@@ -37,6 +37,19 @@ http://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
 
 Heroku
 ===
+
+Development Datenbank in Production importieren
+---
+
+Die Variante mit ```heroku db:push --app rc-leipzig --confirm rc-leipzig``` 
+scheint nicht mehr so ohne weiters zu funktionieren, siehe hier:
+http://stackoverflow.com/questions/11183476/segmentation-fault-in-ruby-when-using-heroku-even-though-project-is-django-based
+
+Ich habe diverse Rake Task erstellt um die lokale Datenbank exportieren und anschließend
+wieder importieren zu können.
+
+
+
 Verschiedene Versionen verwalten
 ---
 https://devcenter.heroku.com/articles/multiple-environments
@@ -68,4 +81,25 @@ Add something like that to the controller
 
 Insert the pagination helper in the view of that controller
     <%= paginate @products %>
+
+
+
+
+Fehler
+===
+
+Heroku
+---
+
+```Net::FTPPermError (500 Illegal PORT command``` 
+Heroku arbeitet scheinbar nur mit der passiven ftp übertragung. 
+    CarrierWave.configure do |config|
+      config.ftp_passive = true
+    end
+
+22:24 02.09.2012
+commit d88138e298f5fb74f6f236c45a49b8a0bd02e6a7
+------
+
+
     

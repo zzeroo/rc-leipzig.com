@@ -1,7 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 #
-# creditials for ftp storage
-config/initializers/carrierwave.rb
+
+#  Datenbank export 
+db/localdb.dump
 
 vendor/cache/*
 public/uploads/*

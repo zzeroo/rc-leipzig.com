@@ -13,5 +13,6 @@ CarrierWave.configure do |config|
   config.ftp_passwd = "rc-l3ipz1g"
   config.ftp_folder = ""
   config.ftp_url    = "http://rc-leipzig.bremme-wohnen.de"
+  config.ftp_passive = true
 end
 

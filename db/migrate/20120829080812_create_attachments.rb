@@ -1,10 +1,11 @@
 class CreateAttachments < ActiveRecord::Migration
   def change
+    drop_table :attachments
     create_table :attachments do |t|
-      t.string :title
       t.text :description
-      t.string :filename
-      t.string :path
+      t.string :file
+      t.integer :attachable_id
+      t.string :attachable_type
 
       t.timestamps
     end

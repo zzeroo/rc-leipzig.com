@@ -49,13 +49,13 @@ class EventsControllerTest < ActionController::TestCase
 
     assert_redirected_to events_path
   end
-  
+
   test "normal user should not be able to create events" do
     user = users(:normaluser)
     ability = Ability.new(user)
     assert ability.cannot?(:save, events(:one))
   end
-  
+
   test "admin user should not be able to create events" do
     admin = users(:admin)
     sign_in :user, admin
@@ -99,4 +99,14 @@ class EventsControllerTest < ActionController::TestCase
     delete :destroy, id: @event
     assert_equal 'Zugriff verweigert! Deine Benutzerrechte reichen nicht aus diesen Termin zu löschen.', flash[:alert]
   end
+
+
+
+  test "should create event with file upload" do
+    assert_difference('Event.count') do
+      post :create, event: { title: @event.title, startdate: @event.startdate, enddate: @event.enddate } 
+    end
+  end
+
+
 end

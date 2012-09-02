@@ -1,17 +1,8 @@
 RcLeipzigCom::Application.routes.draw do
-  get "file_upload/create"
 
-  get "file_upload/index"
+  resources :articles
 
-  get "file_upload/show"
-
-  get "file_upload/destroy"
-
-  # get "attachment/index"
-  # get "attachment/show"
-  # get "attachment/new"
-  # get "attachment/create"
-  # get "attachment/destroy"
+  resource :articles
 
   devise_for :users
 

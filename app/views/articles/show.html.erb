@@ -1,0 +1,19 @@
+<h1><%= @article.title %></H1>
+
+<p>
+  <%= @article.description %>
+</p>
+
+<% unless @article.attachments.blank? -%>
+<ul>
+  <% @article.attachments.each do |attachment| %>
+  <li><%= link_to attachment.file.file.filename, attachment.file.url %></li>
+  <% end -%>
+</ul>
+<% end -%>
+
+
+<p>
+<%= link_to 'Bearbeiten', edit_article_path(@article) %> |
+<%= link_to 'Zurück', articles_path %>
+</p>

@@ -1,4 +1,4 @@
-# Die Passworte sind via `heroku config:add FTP_PASSWORD=8xyz32` gesetzt.
+# Die Passworte sind via `heroku config:add FTP_PASSWORD=xyz321` gesetzt.
 # Siehe auch die README oder PASSWORTE (local)
 
 ftp:

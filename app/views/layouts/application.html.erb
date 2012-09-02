@@ -42,6 +42,7 @@
     </div>
     </header>
 
+
     <div id="main">
       <div class="ym-wrapper">
         <div class="ym-wbox">
@@ -49,11 +50,10 @@
             <div class="ym-col1">
               <div class="ym-cbox">
                 <div id="contentdivwrapper" >
-                  <div id="msgdiv">
-                    <%= content_tag(:div, flash[:error], :id => "flash_error", :class => "box error") if flash[:error] %>
-                    <%= content_tag(:div, flash[:notice], :id => "flash_notice", :class => "box success") if flash[:notice] %>
-                    <%= content_tag(:div, flash[:alert], :id => "flash_alert", :class => "box warning") if flash[:alert] %>
-                  </div>
+                  <% flash.each do |key, msg| %>
+                    <%= content_tag :div, msg, :class => [key, "box error"], :id => "msgdiv" %>
+                    <%= javascript_tag("$('#msgdiv').fadeOut(6000);")  %>
+                  <% end %>
                   <div id="contentdiv">
                     <%= yield %>
                   </div>

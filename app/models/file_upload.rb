@@ -1,22 +1,10 @@
 class FileUpload < ActiveRecord::Base
   require 'net/ftp'
 
-  attr_accessible :description, :file, :path, :title, :uploadable_id, :uploadable_type
+  attr_accessible :description, :file, :path, :title, :uploadable_id, :uploadable_type,
+    :created_at, :updated_at
 
   belongs_to :uploadable, :polymorphic => true
-
-  
-
-  before_save :upload
-
-
-  def upload
-    # MODEL_LOG.debug self.file.original_filename
-    self.file = self.file.original_filename
-  end
-
-
-
 
 
 

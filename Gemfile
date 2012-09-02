@@ -14,6 +14,9 @@ group :development, :test do
   gem 'ZenTest'
   gem 'term-ansicolor'
   gem 'ansi'
+
+  gem 'heroku'
+  gem 'foreman'
 end
 
 gem 'pg'
@@ -42,21 +45,8 @@ gem 'cancan'
 
 # File upload
 gem "rails_config"
+gem 'carrierwave'
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all'
 
 # Better webserver? (20:13 07.08.2012)
 gem 'thin'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'

@@ -4,7 +4,6 @@ require 'rails/test_help'
 
 require 'test/unit/ui/console/testrunner'
 
-# mt = :progressurn stuff
 begin; require 'turn/autorun'; rescue LoadError; end
 
 class Test::Unit::UI::Console::TestRunner

@@ -15,41 +15,24 @@ Die Webseite ist mit den *Ruby on Rails* Webframework erstellt.
 Gehosted wird die Site im *Heroku* Cloud Service.
 
 
-Konfiguration der Anwendung
----
-Ich habe das Rails-Config gem verwendet https://github.com/railsjedi/rails_config
-
-Die Konfiguration erfolg über die Dateien
-    config/settings.yml
-    config/settings/development.yml
-    config/settings/production.yml
-    config/settings/test.yml
-
-abhänging von der jeweiligen Umgebung.
-
-In der Datei config/settings.local.ym. (nicht im Git repo wegen der Passworte)
-sind die Passworte in Klartext enthalten. Das macht in der localen Umgebung 
-nichts.
-
-Für die Heroku Umgebung (Production) ist eine andere Lösung nötig. In der für
-die Produktion entscheidenen Konfigurationsdatei config/settings/production.yml
-stehen keine Klartext Passworte, hier sind lediglich Einträge wie diese
-    
-    ftp:
-      server: ENV['FTP_SERVER']
-      public_url: ENV['FTP_PUBLIC_URL']
-
-Die ENV[''] Einträge werden durch die Umgebungsvariablen des Development
-Rechners ersetzt (heroku config:add FTP_SERVER=rc-leipzig.com). 
-Siehe dazu auch den Heroku Abschnitt dieser README.
-
-
 Dateiupload
 ===
+Der Dateiupload geschieht über das {Carrierewave}[https://github.com/jnicklas/carrierwave] Gem.
+Als Carrierwave Storage wurde das carrierwave-ftp gem gewählt. 
+Die Dateien werden dann auf dem Server von Katrin Roggenbuck gespeichert.
 
-Links zum Dateiupload
+Hierzu habe ich auf dem Server von Katrin eine Subdomain konfiguriert, ein
+Verzeichnis für die Uploads erstellt (TODO: weitere Beschriebung) und ein
+FTP Benutzer angelegt.
+
+
+Links zur verwendetetn Technik für den Dateiupload
 ---
+https://github.com/jnicklas/carrierwave
+https://github.com/luan/carrierwave-ftp/
 http://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
+
+
 
 
 Heroku
@@ -85,5 +68,4 @@ Add something like that to the controller
 
 Insert the pagination helper in the view of that controller
     <%= paginate @products %>
-    
     

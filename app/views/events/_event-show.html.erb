@@ -11,13 +11,3 @@
   <div>Zur Zeit keine weiteren Informationen zu diesem Termin vorhanden!</div>
 <% end -%>
 
-<% unless @event.file_uploads.empty? -%>
-  <div><b>Anhänge</b><br />
-    <% @event.file_uploads.each do |file_upload| -%>
-      <div><%= file_upload.title %></div>
-      <div><%= link_to file_upload.file, file_upload.path %></div>
-      <div><%= file_upload.description %></div>
-    <% end -%>
-  </div>
-<% end -%>
-

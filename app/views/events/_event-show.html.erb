@@ -11,3 +11,13 @@
   <div>Zur Zeit keine weiteren Informationen zu diesem Termin vorhanden!</div>
 <% end -%>
 
+<% unless @event.attachments.blank? %>
+  <div>
+    <ul><b>Anh&auml;nge:</b>
+    <% @event.attachments.each do |attachment| %>
+      <li><%= link_to attachment.file.file.filename, attachment.file.url %></li>
+    <% end -%>
+    </ul>
+  </div>
+<% end -%>
+

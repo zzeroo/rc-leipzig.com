@@ -1,7 +1,7 @@
-<%= form_for(@event, :html => { :class => "ym-form linearize-form ym-columnar"} ) do |f| %>
+<%= nested_form_for(@event, :html => { :class => "ym-form linearize-form ym-columnar"} ) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation" class="box error">
-      <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Events:</h2>
+      <h2>Folgende Fehler verhindert das erfolgreiche Speichern des Termins:</h2>
 
       <ul>
         <% @event.errors.full_messages.each do |msg| %>
@@ -38,8 +38,12 @@
     </div>
     <div class="ym-g50 ym-gr">
       <div class="ym-gbox">
-        <div>
-        </div>
+      <%= f.fields_for :attachments do |builder| %>
+        <%= render 'attachment_fields', :f => builder %>
+      <% end -%>
+
+      <%= f.link_to_add "Anhang anhängen", :attachments %>
+
       </div>
     </div>
   </div>

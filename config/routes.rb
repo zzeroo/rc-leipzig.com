@@ -1,10 +1,8 @@
 RcLeipzigCom::Application.routes.draw do
 
-  resources :articles
-
-  resource :articles
-
   devise_for :users
+
+  resources :articles
 
   resources :events do
     resources :subscribers

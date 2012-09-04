@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   has_many :subscribers, :dependent => :destroy
   has_many :attachments, :as => :attachable, :dependent => :destroy
 
-  accepts_nested_attributes_for :attachments
+  accepts_nested_attributes_for :attachments, :reject_if => lambda { |a| a[:file].blank? }, :allow_destroy => true
 
   validates :title, :presence => true
   validates :startdate, :presence => true

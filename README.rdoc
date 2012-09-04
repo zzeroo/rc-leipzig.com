@@ -30,6 +30,7 @@ Links zur verwendetetn Technik für den Dateiupload
 ---
 https://github.com/jnicklas/carrierwave
 https://github.com/luan/carrierwave-ftp/
+{Super Beschreibung des NestedForm Gems von RyanB}[http://blog.madebydna.com/all/code/2010/10/07/dynamic-nested-froms-with-the-nested-form-gem.html#]
 http://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
 
 

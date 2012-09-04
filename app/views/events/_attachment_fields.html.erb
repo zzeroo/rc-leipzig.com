@@ -1,6 +1,13 @@
 <div class="fields">
-  <%= f.label :file, "Dateiupload" %>
-  <%= f.file_field :file %>
-  <p><%= f.link_to_remove "Anhang entfernen" %></p>
+  <%= f.label :file, "Dateiupload:" %>
+  <% if f.object.new_record? %>
+    <%= f.file_field :file %>
+  <% else -%>
+    <%= link_to f.object.file.file.filename, f.object.file.url  %>
+  <% end -%>
+  <p><%= f.link_to_remove "Upload entfernen", :class=>"ym-button ym-delete"  %></p>
 </div>
+
+<hr />
+
 

@@ -101,12 +101,49 @@ class EventsControllerTest < ActionController::TestCase
   end
 
 
-
   test "should create event with file upload" do
     assert_difference('Event.count') do
       post :create, event: { title: @event.title, startdate: @event.startdate, enddate: @event.enddate } 
     end
   end
 
+  
+  test "should create a attachment through event" do
+    setup_uploaded_file
+    assert_difference('Attachment.count', 1) do
+      post :create, :event => { :description => @event.description, :title => @event.title, :startdate => @event.startdate, :enddate => @event.enddate,
+        :attachments_attributes => { 
+          "0" => { :description => "Erster Anhang", :file => @uploaded_file } 
+        }
+      }
+    end
+
+    assert_redirected_to event_path(assigns(:event))
+  end
+
+#  test "should not create an attachment if all parameter nil" do
+#    setup_uploaded_file
+#    assert_no_difference('Attachment.count') do
+#      put :update, id: @event, event: { :description => @event.description, :title => @event.title, :startdate => @event.startdate, :enddate => @event.enddate,
+#        :attachments_attributes => { 
+#          "0" => { :description => nil, :file => nil } 
+#        }
+#      }
+#    end
+#
+#    assert_redirected_to edit_event_path(assigns(:event))
+#  end
+
+
+
+  private
+
+  def setup_uploaded_file
+    @uploaded_file = ActionDispatch::Http::UploadedFile.new({
+      :filename => 'rails.png',
+      :content_type => 'image/png',
+      :tempfile => File.new("#{Rails.root}/test/fixtures/files/rails.png")
+    })
+  end
 
 end

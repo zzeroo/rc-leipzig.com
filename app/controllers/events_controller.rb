@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => [ :index, :show ]
+
   before_filter :authenticate_user!, :except => [:show, :index]
   
   helper_method :sort_column, :sort_direction
   
-  load_and_authorize_resource
-  skip_authorize_resource :only => [ :index, :show ]
-
   # GET /events
   # GET /events.json
   def index
@@ -32,7 +32,7 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.attachments.build
+    3.times { @event.attachments.build }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -65,15 +65,10 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
-
-    respond_to do |format|
-      if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.update_attributes(params[:event])
+      redirect_to @event, :notice  => "Termin erfolgreich gespeichert."
+    else
+      render :action => 'edit'
     end
   end
 

@@ -35,7 +35,7 @@ group :assets do
   gem 'jquery-ui-rails'
 end
 
-gem "nested_form"
+gem "nested_form", github: 'ryanb/nested_form'
 
 gem 'jquery-rails'
 # Pagination

@@ -1,7 +1,8 @@
 # encoding: utf-8
 
 class FileUploader < CarrierWave::Uploader::Base
-  storage :ftp
+  # Alle Konfig wird in einem Initalizer unter config/initalizer/carrierwave.rb gehändelt
+  # storage :ftp
 
   # How to: Make Carrierwave work on Heroku
   # https://github.com/jnicklas/carrierwave/wiki/How-to%3A-Make-Carrierwave-work-on-Heroku

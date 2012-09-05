@@ -14,6 +14,7 @@ group :development, :test do
   gem 'ZenTest'
   gem 'term-ansicolor'
   gem 'ansi'
+  gem 'minitest'
 
   gem 'heroku'
   gem 'foreman'

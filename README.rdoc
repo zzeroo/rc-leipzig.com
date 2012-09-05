@@ -1,5 +1,5 @@
-Highlights
-===
+= Highlights
+
 Ich versuche hier einige der "Highlights" der neuen Seite fest zu halten.
 Die Liste der Funktionen ist nicht vollständig und wird ständig erweitert.
 Sollten einige hier genannten Sachen nicht funktionieren schickt mir bitte ein
@@ -8,15 +8,15 @@ Nachricht über Github oder an <rc-leipzig-com at zzeroo.org>.
 - Klick auf den Beta Button, oben rechts auf jeder Seite, führt zu einer Liste der Änderungen die an der Webseite vorgenommen wurden
 
 
-Techisches
-===
+= Techisches
+
 Die Webseite ist mit den *Ruby on Rails* Webframework erstellt. 
 
 Gehosted wird die Site im *Heroku* Cloud Service.
 
 
-Dateiupload
-===
+= Dateiupload
+
 Der Dateiupload geschieht über das {Carrierewave}[https://github.com/jnicklas/carrierwave] Gem.
 Als Carrierwave Storage wurde das carrierwave-ftp gem gewählt. 
 Die Dateien werden dann auf dem Server von Katrin Roggenbuck gespeichert.
@@ -36,11 +36,8 @@ http://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
 
 
 
-Heroku
-===
-
-Development Datenbank in Production importieren
----
+= Heroku
+== Development Datenbank in Production importieren
 
 Die Variante mit ```heroku db:push --app rc-leipzig --confirm rc-leipzig``` 
 scheint nicht mehr so ohne weiters zu funktionieren, siehe hier:
@@ -51,32 +48,32 @@ wieder importieren zu können.
 
 
 
-Verschiedene Versionen verwalten
----
+== Verschiedene Versionen verwalten
+
 https://devcenter.heroku.com/articles/multiple-environments
 
 
 
-Kaminari
-===
+= Kaminari
+
 Kaminari dient als Paginator für die Subscriber.
 
-Installation
----
+== Installation
+
 Add this line to Your Gemfile and run `bundle install`
     gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
 
 
-Kaminari-Theme Installation
----
+=== Kaminari-Theme Installation
+
 Check out this git repo and copy the content of one of the folder to Your Rails 3 app
 directory.
     cd tmp/
     git clone git@github.com:zzeroo/kaminari_themes.git
     cp kaminari_themes/github-extended/app ../ -rv
 
-Kaminari Integration
----
+== Kaminari Integration
+
 Add something like that to the controller
     @products = Product.order(:title).page(params[:page]).per(5)
 
@@ -86,8 +83,8 @@ Insert the pagination helper in the view of that controller
 
 
 
-Fehler
-===
+= Fehler
+
 
 Heroku
 ---

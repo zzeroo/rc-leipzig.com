@@ -1,7 +1,5 @@
 RcLeipzigCom::Application.routes.draw do
 
-  devise_for :users
-
   resources :articles
 
   resources :events do
@@ -10,9 +8,9 @@ RcLeipzigCom::Application.routes.draw do
 
   resources :attachments, :controller => "attachment"
 
-  resources :users
-
   root :to => 'home#index'
   
+  devise_for :users
+
   match ':controller(/:action(/:id))'
 end

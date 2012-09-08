@@ -1,9 +1,23 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
+gem 'pg'
+gem 'redcarpet'
+gem 'nested_form', github: 'ryanb/nested_form'
+gem 'jquery-rails'
+# Pagination
+gem 'kaminari' #, :git => 'https://github.com/PapePathe/kaminari.git'
+# Authentication and rights managment
+gem 'devise'
+gem 'cancan'
+# File upload
+gem 'rails_config'
+gem 'carrierwave'
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Better webserver? (20:13 07.08.2012)
+gem 'thin'
+
 
 group :development, :test do
   gem 'taps'
@@ -38,25 +52,4 @@ group :development do
   gem 'hpricot'
   gem 'ruby_parser'
 end
-
-gem 'pg'
-
-gem "nested_form", github: 'ryanb/nested_form'
-
-gem 'jquery-rails'
-# Pagination
-gem 'kaminari' #, :git => 'https://github.com/PapePathe/kaminari.git'
-
-# Authentication and rights managment
-gem 'devise'
-gem 'cancan'
-
-# File upload
-gem "rails_config"
-gem 'carrierwave'
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all'
-
-# Better webserver? (20:13 07.08.2012)
-gem 'thin'
-
 

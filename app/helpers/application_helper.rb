@@ -5,21 +5,24 @@ module ApplicationHelper
     direction = (column == sort_column && sort_direction == "asc") ? "desc" : "asc"
     link_to title, {:sort => column, :direction => direction}, :class => css_class 
   end
-  
 
-  def link_to_add_fields(name, f, association)
-    new_object = f.object.class.reflect_on_association(association).klass.new
-    fields = f.fields_for(association, new_object, :child_index => "new_#{association}") do |builder|
-      render(association.to_s.singularize + "_fields", :f => builder)
-    end
-    link_to_function(name, h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")"))
+  # Markdown parser durch das 'redcarpet' gem.
+  # {Homepage of Redcarpet2}[https://github.com/vmg/redcarpet]
+  #
+  # http://railscasts.com/episodes/272-markdown-with-redcarpet?view=asciicast
+  def markdown(text)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                       :autolink => true, 
+                                       :fenced_code_blocks => true,
+                                       :space_after_headers => true)
+    markdown.render(text).html_safe
   end
 
-  def link_to_remove_fields(name, f)
-    f.hidden_field(:_destroy) + link_to_function(name, "remove_fields(this)")
-  end
-
-  # Page Menu yellow background on active pages
+  # Dies ist der Helper der die Hauptnavigation der Seite steuert.
+  # Er sorgt dafür dass die jeweilige Seite gelb hinterlegt ist.
+  # Steht man also auf der Startseite ist der Menupunkt Startseite gelb, steht
+  # man dagegen auf der Terminübersicht/ vergabe Seite dann ist diese 
+  # gelb hinterlegt.
   def is_active?(page_name)
     if params[:controller] == 'home'
       "active" if params[:action] == page_name
@@ -27,5 +30,4 @@ module ApplicationHelper
       "active" if params[:controller] == page_name
     end
   end
-
 end

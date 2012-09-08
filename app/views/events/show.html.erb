@@ -1,9 +1,10 @@
 <div id="main" class="ym-cbox">
   <div class="ym-wrapper">
-    <section class="box info"><div class="ym-grid linearize-level-1">
+    <section class="box info"><div class="ym-grid">
       <%= image_tag "race-flags-small.png" %>
       Derzeit sind <%= @event.subscribers.size  %> Teilnehmer auf der Nennliste. <%- if current_user %><%= link_to "Export CSV", event_subscribers_path(@event, :format => 'csv'), :class => "ym-button ym-next" %><%- end %>
     </div></section>
+
     <section>
     <article class="event-show">
 
@@ -19,4 +20,3 @@
     </section>
   </div>
 </div>
-

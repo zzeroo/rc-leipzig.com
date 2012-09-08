@@ -5,7 +5,7 @@
 
 <% unless @event.description.blank? %>
   <div><b>Beschreibung:</b><br />
-    <%= @event.description %>
+    <%= markdown @event.description %>
   </div>
 <% else -%>
   <div>Zur Zeit keine weiteren Informationen zu diesem Termin vorhanden!</div>

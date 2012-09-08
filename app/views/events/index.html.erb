@@ -29,8 +29,8 @@
           <td style="width: 60%" class="event-title"><%= link_to event.title, event %></td>
           <td><%= event.location %></td>
         </tr>
-        <tr style="display:none" class="description">
-          <td colspan="3">
+        <tr>
+          <td colspan="3" style="display:none" class="hidden-event-index">
             <article class="event-index">
             <%= render :partial => 'event-show', :locals => { :event => event} %>
             <div>

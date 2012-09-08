@@ -17,7 +17,8 @@ events = Event.create([
   { :startdate => "2012-06-23", :enddate => "2012-06-24",:title => "Sachsen GP & LE Moosi Cup", :location => "Racing Center Leipzig" },
   { :startdate => "2012-09-01", :enddate => "2012-09-02",:title => "Sachsen GP & LE Moosi Cup", :location => "Racing Center Leipzig" },
   { :startdate => "2012-10-05", :enddate => "2012-10-07",:title => "Hobby Modell Spiel", :location => "Racing Center Leipzig" },
-  { :startdate => "2012-11-17", :enddate => "2012-11-18",:title => "LRP Offroad Challenge", :location => "Racing Center Leipzig" },
+  { :startdate => "2012-10-13", :enddate => "2012-10-14",:title => "LRP-HPI Challenge", :location => "Racing Center Leipzig" },
+  { :startdate => "2012-11-10", :enddate => "2012-11-11",:title => "LRP-HPI Challenge", :location => "Racing Center Leipzig" },
   { :startdate => "2012-12-01", :enddate => "2012-12-02",:title => "Tamiya Euro Cup", :location => "Racing Center Leipzig" }
 ])
 

@@ -9,14 +9,12 @@ Nachricht über Github oder an <rc-leipzig-com at zzeroo.org>.
 
 
 = Techisches
-
 Die Webseite ist mit den *Ruby on Rails* Webframework erstellt. 
 
 Gehosted wird die Site im *Heroku* Cloud Service.
 
 
-= Dateiupload
-
+== Dateiupload
 Der Dateiupload geschieht über das {Carrierewave}[https://github.com/jnicklas/carrierwave] Gem.
 Als Carrierwave Storage wurde das carrierwave-ftp gem gewählt. 
 Die Dateien werden dann auf dem Server von Katrin Roggenbuck gespeichert.
@@ -37,6 +35,16 @@ http://www.tutorialspoint.com/ruby-on-rails/rails-file-uploading.htm
 
 
 = Heroku
+== Domains verwalten
+https://devcenter.heroku.com/articles/custom-domains
+
+1. Domain für Heroku App setzen 
+```heroku domains:clear```
+```heroku domains:add foo.bar.de --app foo.bar-1234```
+
+2. DNS Eintrag für die Domain im 1und1 Kontrollcenter setzen.
+Domains -> DNS Einstellungen bearbeiten -> 
+
 == Development Datenbank in Production importieren
 
 Die Variante mit ```heroku db:push --app rc-leipzig --confirm rc-leipzig``` 
@@ -47,31 +55,27 @@ Ich habe diverse Rake Task erstellt um die lokale Datenbank exportieren und ansc
 wieder importieren zu können.
 
 
-
 == Verschiedene Versionen verwalten
-
 https://devcenter.heroku.com/articles/multiple-environments
 
 
+
+
 = Sortierbare Spalten
-
-
 == Links zu sortierbaren Spalten
 http://asciicasts.com/episodes/228-sortable-table-columns
 
 
-= Kaminari
 
+= Kaminari
 Kaminari dient als Paginator für die Subscriber.
 
 == Installation
-
 Add this line to Your Gemfile and run `bundle install`
     gem 'kaminari', :git => 'https://github.com/PapePathe/kaminari.git'
 
 
 === Kaminari-Theme Installation
-
 Check out this git repo and copy the content of one of the folder to Your Rails 3 app
 directory.
     cd tmp/

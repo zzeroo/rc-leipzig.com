@@ -15,7 +15,7 @@ CarrierWave.configure do |config|
     config.ftp_folder = "test-uploads"
     config.ftp_url    = "http://rc-leipzig.bremme-wohnen.de/test-uploads"
   elsif Rails.env.development?
-    config.storage = :file
+    config.storage = :ftp
   end
 
 end

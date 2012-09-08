@@ -21,7 +21,7 @@
 // TODO: Move to events.js
 $(document).ready(function() {
   $('#events tr.clickable').click(function() {
-     $(this).next().slideToggle("fast");
+     $(this).next('tr').find('.hidden-event-index').fadeToggle("slow");
   });
 });
 

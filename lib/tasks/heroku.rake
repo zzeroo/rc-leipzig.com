@@ -1,4 +1,4 @@
-require File.join( Rails.root, 'config/environment.rb' ) if Rails.env.test?
+require File.join( Rails.root, 'config/environment.rb' ) if Rails.env.development?
 require 'net/ftp'
 
 namespace "heroku" do

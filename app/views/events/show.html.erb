@@ -10,9 +10,9 @@
     <%= render 'event-show', :object => @event  %>
 
     <div>
-      <% unless @event.enddate.past? -%><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(@event), :class => "ym-button" %><% end -%>
-      <%- if current_user.try(:admin) %><%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %><%- end %>
       <%= link_to 'Zurück zur Übersicht', events_path, :class => "ym-button" %>
+      <%- if current_user.try(:admin) %><%= link_to 'Bearbeiten', edit_event_path(@event), :class => "ym-button" %><%- end %>
+      <% unless @event.enddate.past? -%><%= link_to 'in Nennliste eintragen', new_event_subscriber_path(@event), :class => "ym-button" %><% end -%>
     </div>
 
     </article>

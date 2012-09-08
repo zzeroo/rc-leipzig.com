@@ -1,6 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 #
 
+# das Wiki
+rc-leipzig.com.wiki
+
 #  Datenbank export 
 db/localdb.dump
 

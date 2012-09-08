@@ -29,7 +29,7 @@
             <p>Angemeldet als <%= (current_user.username.empty?) ? current_user.email : current_user.username %>. Das bist du nicht?<br /> 
             <%= link_to "Abmelden", destroy_user_session_path, :method => :delete %>| 
             <%= link_to "Benutzerprofil", edit_user_registration_path(current_user) %>  </p>
-            <%- if current_user.try(:admin) %><%= link_to "Benutzerverwaltung", users_path %></p><%- end %>
+            <%- if current_user.try(:admin) %><%= link_to "Benutzerverwaltung", user_registration_path %></p><%- end %>
           <% else %>  
             <%= link_to "Registieren", new_user_registration_path %> oder
             <%= link_to "Anmelden", new_user_session_path %>  
@@ -51,8 +51,10 @@
               <div class="ym-cbox">
                 <div id="contentdivwrapper" >
                   <% flash.each do |key, msg| %>
-                    <%= content_tag :div, msg, :class => [key, "box error"], :id => "msgdiv" %>
+                  <div id="main" class="ym-cbox">
+                    <%= content_tag :div, msg, :class => [key, "box"], :id => "msgdiv" %>
                     <%= javascript_tag("$('#msgdiv').fadeOut(6000);")  %>
+                  </div>
                   <% end %>
                   <div id="contentdiv">
                     <%= yield %>

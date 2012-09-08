@@ -6,7 +6,6 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'taps'
   gem 'turn'
   gem 'test-unit', '~> 2.0.0'  
@@ -20,13 +19,12 @@ group :development, :test do
   gem 'foreman'
 end
 
-gem 'pg'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'haml-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
@@ -35,6 +33,13 @@ group :assets do
   gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
   gem 'jquery-ui-rails'
 end
+
+group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
+end
+
+gem 'pg'
 
 gem "nested_form", github: 'ryanb/nested_form'
 
@@ -53,3 +58,5 @@ gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all'
 
 # Better webserver? (20:13 07.08.2012)
 gem 'thin'
+
+

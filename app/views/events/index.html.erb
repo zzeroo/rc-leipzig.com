@@ -13,11 +13,11 @@
     durch ein Klick auf den jeweiligen Termin erreicht werden.
   </div>
 
-  <table class="bordertable" id="events">
+  <table class="sortable" id="events">
     <tr>
-      <th><%= sortable "Datum", :startdate %></th>
-      <th><%= sortable "Event", :title %></th>
-      <th><%= sortable "Ort", :location %></th>
+      <th><%= sortable "startdate", "Datum" %></th>
+      <th><%= sortable "title", "Termin" %></th>
+      <th><%= sortable "location", "Ort" %></th>
     </tr>
 
     <% @events.each do |event| %>

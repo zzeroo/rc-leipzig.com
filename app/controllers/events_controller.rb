@@ -86,6 +86,7 @@ class EventsController < ApplicationController
   
 
   private
+  
   def sort_column
     Event.column_names.include?(params[:sort]) ? params[:sort] : "startdate"
   end

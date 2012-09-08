@@ -53,6 +53,12 @@ wieder importieren zu können.
 https://devcenter.heroku.com/articles/multiple-environments
 
 
+= Sortierbare Spalten
+
+
+== Links zu sortierbaren Spalten
+http://asciicasts.com/episodes/228-sortable-table-columns
+
 
 = Kaminari
 

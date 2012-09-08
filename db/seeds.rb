@@ -21,14 +21,6 @@ events = Event.create([
   { :startdate => "2012-12-01", :enddate => "2012-12-02",:title => "Tamiya Euro Cup", :location => "Racing Center Leipzig" }
 ])
 
-
-#puts "Creating attachments to events ..."
-#attachments = Attachment.create([
-#  { :startdate => "2012-11-17", :enddate => "2012-11-18",:title => "LRP Offroad Challenge", :location => "Racing Center Leipzig" },
-#  { :startdate => "2012-12-01", :enddate => "2012-12-02",:title => "Tamiya Euro Cup", :location => "Racing Center Leipzig" }
-#])
-#
-
 puts "Creating users ..."
 users = User.create([
   { :username => "zzeroo", :email  => "pulp@zzeroo.org", :password => "rc-leipzig", :password_confirmation => "rc-leipzig" },

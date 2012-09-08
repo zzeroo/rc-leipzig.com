@@ -1,0 +1,18 @@
+= form_for(@user, :html => { :class => "ym-form linearize-form ym-columnar"} ) do |f|
+  - if @user.errors.any?
+    #error_explanation.box.error
+      %h2 Folgende Fehler verhindert das erfolgreiche Speichern des Benutzers
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :username
+    = f.text_field :username
+  .field
+    = f.label :password
+    = f.text_field :password
+  .field
+    = f.label :password_confirmation
+    = f.text_field :password_confirmation
+  .actions
+    = f.submit

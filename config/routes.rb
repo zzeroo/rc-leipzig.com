@@ -12,5 +12,10 @@ RcLeipzigCom::Application.routes.draw do
   
   devise_for :users
 
+  # http://guides.rubyonrails.org/routing.html#controller-namespaces-and-routing
+  scope :module => "admin" do
+    resources :users
+  end
+
   match ':controller(/:action(/:id))'
 end

@@ -5,10 +5,9 @@ $ ->
   $(".datepicker").datepicker({ dateFormat: "yy-mm-dd", appendText: "(yyyy-mm-dd)" })
 
 
-# Zeige eine kleine 
+# Zeige ein kleines Info Fenster beim Hover über die Spalte
 $ ->
   $(".clickable").hover \ 
-    -> $(this).find('td.event-title').append('<p id="event-info" class="float-right event-index-info-small">F&uuml;r weitere Infos<br />bitte in die Spalte klicken</p>')
-    ,    
+    -> $(this).find('td.event-title').append('<p id="event-info" class="float-right event-index-info-small">F&uuml;r weitere Infos<br />bitte in die Spalte klicken</p>'),
     -> $(this).find('td.event-title').find('#event-info').remove()
 

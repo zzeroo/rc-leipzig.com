@@ -1,10 +1,24 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource
 
   helper_method :sort_column, :sort_direction
 
-  def index
-    @users = User.find(:all)
+  def new
+  end
+  
+  def edit
+  end
+
+  def create
+  end
+
+  def update
+    if @user.update_attributes(params[:user])
+      @current_ability = nil
+      @current_user = nil
+      # ...
+    end
   end
 
   def update_password

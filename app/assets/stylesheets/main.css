@@ -147,15 +147,15 @@ hr {
 /* Sortable column
  * http://asciicasts.com/episodes/228-sortable-table-columns
  */
-.sortable tbody tr th .current {
+.sortable th .current {
   padding-right: 22px;  
   background-repeat: no-repeat;  
   background-position: right center;  
 }  
-.sortable tbody tr th .asc {   
+.sortable th .asc {   
   background-image: url(up_arrow.gif);   
 }  
 
-.sortable tbody tr th .desc {   
+.sortable th .desc {   
   background-image: url(down_arrow.gif);   
 }

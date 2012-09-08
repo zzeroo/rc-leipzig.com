@@ -1,15 +1,15 @@
 <div id="main" class="ym-cbox">
 
-  <h1>Benutzer</h1>
+  <h1>Benutzer &Uuml;bersicht</h1>
 
-  <table class="bordertable sortable">
+  <table class="sortable">
     <thead>
       <tr>
-        <th>Benutzername</td>
-        <th>Email Adresse</td>
-        <th>erstellt</td>
-        <th>letzter Login</td>
-        <th>Admin?</td>
+        <th><%= sortable "username", "Benutzername" %></td>
+        <th><%= sortable "email", "Email Adresse" %></td>
+        <th><%= sortable "created_at", "erstellt" %></td>
+        <th><%= sortable "last_sign_in_at", "letzter Login" %></td>
+        <th><%= sortable "admin", "Admin?" %></td>
       </tr>
     </thead>
     <% @users.each do |user| %>
@@ -24,6 +24,4 @@
       </tbody>
     <% end %>
   </table>
-
-  <div><%= link_to "Neuen Benutzer anlegen", new_admin_user_path, :class => "ym-button" %></div>
 </div>

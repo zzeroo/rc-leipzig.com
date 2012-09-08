@@ -1,0 +1,3 @@
+[submodule "rc-leipzig.com.wiki"]
+	path = rc-leipzig.com.wiki
+	url = git@github.com:zzeroo/rc-leipzig.com.wiki
